@@ -6,7 +6,7 @@
 
 ### Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
-- v5.9.3.2 (Realtek) (2020-10-12)
+- v5.13.6 (Realtek) (2021-06-29)
 - Plus updates from the Linux community
 
 ### Features
@@ -41,8 +41,8 @@ A FAQ is available at the end of this document.
 
 ### Compatible Kernels
 
-- Kernels: 2.6.24 - 5.8 (Realtek)
-- Kernels: 5.9 - 5.13 (community support)
+- Kernels: 4.4 - 5.11 (Realtek)
+- Kernels: 5.12 - 5.14 (community support)
 
 ### Tested Linux Distributions
 
@@ -54,19 +54,17 @@ A FAQ is available at the end of this document.
 - Kali Linux (kernel 5.10)
 
 - Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernel 5.4)
-- Linux Mint 20   (Linux Mint based on Ubuntu) (kernel 5.4)
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
 - Manjaro 20.1 (kernel 5.9)
 
 - Raspberry Pi OS (2021-01-11) (ARM 32 bit) (kernel 5.10)
-- Raspberry Pi Desktop (x86 32 bit) (kernel 4.9)
+- Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
 - Ubuntu 21.04 (kernel 5.11)
 - Ubuntu 20.10 (kernel 5.8)
 - Ubuntu 20.04 (kernel 5.4)
-- Ubuntu 18.04 (kernel 5.4)
 
 ### Download Locations for Tested Linux Distributions
 
@@ -93,9 +91,7 @@ A FAQ is available at the end of this document.
 * Linksys WUSB6300 V1
 * Rosewill RNX-AC1200UBE
 * TRENDnet TEW-805UB
-* Numerous products that are based on the supported chipset.
-
-Warning: Beware of "multi-state" USB WiFi adapters. Some USB WiFi adapters have proprietary Windows drivers onboard. When plugged in, they act like a flash drive or CDROM and on Windows will attempt to start installing the Windows driver. That won't work on Linux or MAC or any other non-Windows OS so the adapter sits there in flash drive or CDROM mode. The problem is that the state of the adapter has to be changed for the adapter to show up as the device that you expect, in this case, a WiFi adapter. Most modern Linux distributions ship with a utility called "usb-modeswitch" that will handle this issue for you if it has the correct information for your adapter. It is a good utility but if you buy adapters that are "multi-state," that is one more potential headache you may have to deal with when something goes wrong. Often you can indentify adapters that are "multi-state" as they are advertised as "free driver" or "free installation driver." If you are looking to buy a USB WiFi adapter for use on Linux, MAC OS, *NIX or anything besides Windows, it is a good idea to seek out single-state adapters.
+* Numerous adapters that are based on the supported chipset.
 
 Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
 
@@ -181,11 +177,11 @@ $ cd ~/src
 ```
 Step 6: Download the driver
 ```bash
-$ git clone https://github.com/morrownr/8812au.git
+$ git clone https://github.com/morrownr/8812au-20210629.git
 ```
 Step 7: Move to the newly created driver directory
 ```bash
-$ cd ~/src/8812au
+$ cd ~/src/8812au-20210629
 ```
 Step 8: Warning: this step only applies if you are installing to Raspberry Pi *hardware*.
 
@@ -243,7 +239,7 @@ Step 1: Open a terminal (Ctrl+Alt+T)
 
 Step 2: Move to the driver directory
 ```bash
-$ cd ~/src/8812au
+$ cd ~/src/8812au-20210629
 ```
 Step 3: Run the removal script
 ```bash
@@ -370,7 +366,7 @@ Atheros drivers. You can get more information and links at the following site:
 https://github.com/morrownr/USB-WiFi
 
 
-Question: I bought two rtl88x2bu adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
+Question: I bought two rtl8812au adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
 
 Answer: You can't. Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in the same computer. I recommend adapters with the mt7612u chipset if you are looking for AC 1200+ adapters. You can get more information and links at the following site:
 
@@ -379,7 +375,7 @@ https://github.com/morrownr/USB-WiFi
 
 Question: Why do you recommend Mediatek based adapters when you maintain this repo for a Realtek driver?
 
-Answer: Many Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. If users want a PCIe, mPCIe, SDIO or other implementation then Intel, Mediatek or Atheros are good solutions. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards for USB WiFi adapters. Realtek drivers are problematic in many ways. You have been WARNED. For information about usb wifi adapters:
+Answer: Many new Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. If users want a PCIe, mPCIe, SDIO or other implementation then Intel, Mediatek or Atheros are good solutions. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards for USB WiFi adapters. Realtek drivers are problematic in many ways. You have been WARNED. For information about usb wifi adapters:
 
 https://github.com/morrownr/USB-WiFi
 
