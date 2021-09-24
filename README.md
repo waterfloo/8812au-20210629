@@ -6,7 +6,7 @@
 
 ### Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
-- v5.13.6 (Realtek) (2021-06-29)
+- v5.13.6 (Realtek) (20210629)
 - Plus updates from the Linux community
 
 ### Features
@@ -17,7 +17,7 @@
   * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Support site survey scan and manual connect
   * Support power saving mode
-- Supported interface modes:
+- Supported interface modes
   * IBSS
   * Managed
   * AP (see *Bridged Wireless Access Point* located in the main directory of this repo)
@@ -86,14 +86,13 @@ A FAQ is available at the end of this document.
 * Alfa AWUS036ACH
 * Belkin F9L1109
 * Buffalo - WI-U3-866D
-* D-Link DWA-182 (Rev. C1)
 * Edimax EW-7822UAC
 * Linksys WUSB6300 V1
 * Rosewill RNX-AC1200UBE
 * TRENDnet TEW-805UB
 * Numerous adapters that are based on the supported chipset.
 
-Note: Some adapter makers change the chipsets in their products while keeping the same model number so please check to confirm that the product you plan to buy has the chipset you are expecting.
+Note: Please read "supported-device-IDs" for information about how to confirm the correct driver for your adapter.
 
 ### Installation Information
 
@@ -210,9 +209,9 @@ $ sudo reboot
 
 ### Driver Options
 
-A file called `8812au.conf` will be installed in `/etc/modeprob.d` by default.
+A file called `8812au.conf` will be installed in `/etc/modeprobe.d` by default.
 
-`/etc/modprobe.d/8812au.conf`
+Location: `/etc/modprobe.d/8812au.conf`
 
 This file will be read and applied to the driver on each system boot.
 

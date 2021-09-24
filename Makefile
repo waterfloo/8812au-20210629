@@ -103,7 +103,7 @@ endif
 CONFIG_RTW_DEBUG = y
 # default log level is _DRV_INFO_ = 4,
 # please refer to "How_to_set_driver_debug_log_level.doc" to set the available level.
-CONFIG_RTW_LOG_LEVEL = 4
+CONFIG_RTW_LOG_LEVEL = 0
 
 # enable /proc/net/rtlxxxx/ debug interfaces
 CONFIG_PROC_DEBUG = y
@@ -137,6 +137,8 @@ CONFIG_LAYER2_ROAMING = y
 CONFIG_ROAMING_FLAG = 0x3
 ###################### Platform Related #######################
 CONFIG_PLATFORM_I386_PC = y
+CONFIG_PLATFORM_ARM_RPI = n
+CONFIG_PLATFORM_ARM64_RPI = n
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
 CONFIG_PLATFORM_JB_X86 = n
@@ -1345,6 +1347,35 @@ MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
 STAGINGMODDIR := /lib/modules/$(KVER)/kernel/drivers/staging
 endif
+
+### START RASPBERRY PI OS SUPPORT
+
+ifeq ($(CONFIG_PLATFORM_ARM_RPI), y)
+EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
+#EXTRA_CFLAGS += -DPLATFORM_LINUX
+ARCH ?= arm
+CROSS_COMPILE ?=
+KVER ?= $(shell uname -r)
+KSRC := /lib/modules/$(KVER)/build
+MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
+INSTALL_PREFIX :=
+endif
+
+ifeq ($(CONFIG_PLATFORM_ARM64_RPI), y)
+EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
+#EXTRA_CFLAGS += -DPLATFORM_LINUX
+EXTRA_CFLAGS += -fno-stack-protector
+ARCH ?= arm64
+CROSS_COMPILE ?=
+KVER ?= $(shell uname -r)
+KSRC := /lib/modules/$(KVER)/build
+MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
+INSTALL_PREFIX :=
+endif
+
+### END RASPBERRY PI OS SUPPORT
 
 ifeq ($(CONFIG_PLATFORM_NV_TK1), y)
 EXTRA_CFLAGS += -DCONFIG_PLATFORM_NV_TK1
