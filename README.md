@@ -14,9 +14,9 @@
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
 - IEEE 802.11b/g/n/ac Client mode
-  * Support wireless security for WEP, WPA TKIP and WPA2 AES PSK
-  * Support site survey scan and manual connect
-  * Support power saving mode
+  * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
+  * Supports site survey scan and manual connect
+  * Supports power saving mode
 - Supported interface modes
   * IBSS
   * Managed
@@ -32,7 +32,13 @@
 - SU Beamformee and MU Beamformee control
 - SU Beamformer control
 
-A FAQ is available at the end of this document.
+Note: WPA3-SAE support is in this driver but currently, almost all Linux distros will require you to download, compile and install the current master of wpa_supplicant at the following site:
+
+https://w1.fi/cgit/
+
+If there is interest, I will develop and post a guide.
+
+Note: A FAQ is available at the end of this document.
 
 ### Compatible CPUs
 
@@ -53,13 +59,13 @@ A FAQ is available at the end of this document.
 
 - Kali Linux (kernel 5.10)
 
-- Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernel 5.4)
+- Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernels 5.4 and 5.11)
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
 - Manjaro 20.1 (kernel 5.9)
 
-- Raspberry Pi OS (2021-01-11) (ARM 32 bit) (kernel 5.10)
+- Raspberry Pi OS (2021-05-07) (ARM 32 bit) (kernel 5.10)
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
 - Ubuntu 21.04 (kernel 5.11)
@@ -112,7 +118,9 @@ There is no need to disable Secure Mode to install this driver. If Secure Mode i
 
 Step 1: Open a terminal (Ctrl+Alt+T)
 
-Step 2: Update the system (select the option for the OS you are using)
+Step 2: Update system package information (select the option for the OS you are using)
+
+Note: If you do not regularly maintain your system by installing updated packages, it is a good idea to not only update system package information but also to install the updated packages followed by a system reboot. The installation can then be continued with step 3.
 ```
     Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and Raspberry Pi OS
 
@@ -153,10 +161,10 @@ Step 3: Install the required packages (select the option for the OS you are usin
 
     Note: If you are asked to choose a provider, make sure to choose the one that
     corresponds to your version of the linux kernel (for example, "linux510-headers"
-    for Linux kernel version 5.10) if you install the incorrect version, you'll have
+    for Linux kernel version 5.10). If you install the incorrect version, you'll have
     to uninstall it and reinstall the correct version.
 
-    if using other methods, please follow the instructions provided by those methods
+    If using other methods, please follow the instructions provided by those methods.
 
 ```
 
@@ -182,7 +190,7 @@ Step 7: Move to the newly created driver directory
 ```bash
 $ cd ~/src/8812au-20210629
 ```
-Step 8: Warning: this step only applies if you are installing to Raspberry Pi *hardware*.
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi *hardware*. You can skip this step if installing to x86 or amd64 based systems.
 
 Run a preparation script
 ```
@@ -200,7 +208,7 @@ Run a preparation script
 ```
 Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 ```bash
-$ sudo ./install-driver.sh [NoPrompt]
+$ sudo ./install-driver.sh
 ```
 Step 10: Reboot
 ```bash
@@ -254,19 +262,19 @@ Note: These are general recommendations, some of which may not apply to your spe
 
 Security: Set WPA2-AES. Do not set WPA2 mixed mode or WPA or TKIP.
 
-Channel width for 2.4G: Set 20 MHz fixed width. Do not use 40 MHz or 20/40 automatic.
+Channel width for 2.4 GHz: Set 20 MHz fixed width. Do not use 40 MHz or 20/40 automatic.
 
-Channels for 2.4G: Set channel 1 or 6 or 11 depending on the congestion at your location. Do not set automatic channel selection.
+Channels for 2.4 GHz: Set channel 1 or 6 or 11 depending on the congestion at your location. Do not set automatic channel selection. As time passes, if you notice poor performance, recheck congestion and set channel appropriately. The environment around you can and does change over time.
 
-Mode for 2.4G: For best performance, set "N only" if you no longer use B or G capable devices.
+Mode for 2.4 GHz: For best performance, set "N only" if you no longer use B or G capable devices.
 
-Network names: Do not set the 2.4G Network and the 5G Network to the same name. Note: Unfortunately many routers come with both networks set to the same name.
+Network names: Do not set the 2.4 GHz Network and the 5 GHz Network to the same name. Note: Unfortunately many routers come with both networks set to the same name. You need to be able to control which network that is in use.
 
-Channels for 5G: Not all devices are capable of using DFS channels. It may be necessary to set a fixed channel in the range of 36 to 48 or 149 to 161 in order for all of your devices to work on 5g. (for US, other countries may vary)
+Channels for 5 GHz: Not all devices are capable of using DFS channels. It may be necessary to set a fixed channel in the range of 36 to 48 or 149 to 161 in order for all of your devices to work on 5 GHzg. (for US, other countries may vary)
 
-Best location for the wifi router/ access point: Near center of apartment or house, at least a couple of feet away from walls, in an elevated location.
+Best location for the wifi router/ access point: Near center of apartment or house, at least a couple of feet away from walls, in an elevated location. You may have to test to see what the best location is in your environment.
 
-Check congestion: There are apps available for smart phones that allow you to check the congestion levels on wifi channels. The apps generally go by the name of WiFi Analyzer or something similar.
+Check congestion: There are apps available for smart phones that allow you to check the congestion levels on wifi channels. The apps generally go by the name of ```WiFi Analyzer``` or something similar.
 
 After making and saving changes, reboot the router.
 
@@ -335,46 +343,27 @@ $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 ### FAQ:
 
-Question: Does WPA3 work with this driver?
-
-Answer: No, WPA3 does not work with this driver. If you need an AC class adapter
-that does support WPA3, I suggest an Alfa AWUS036ACM (mt7612u chipset) but there
-are other adapters based on the mt7612u chipset available at various price points.
-Be aware that WPA3 support is not fully in place in all Linux distros currently.
-More than driver support is required for WPA3 support. You can get more information
-and links at the following site:
-
-https://github.com/morrownr/USB-WiFi
-
-
 Question: What interface combinations does this driver support?
 
 Answer: None. Realtek out-of-kernel drivers, including this driver, do not
 support interface combinations. If you need support for interface combinations,
-I suggest adapters based on the Mediatek chipsets. You can get more information
-and links at the following site:
-
-https://github.com/morrownr/USB-WiFi
+I suggest adapters based on the Mediatek chipsets.
 
 
 Question: What extended features does this driver support?
 
 Answer: None. For extended features, you need an adapter that uses Mediatek or
-Atheros drivers. You can get more information and links at the following site:
-
-https://github.com/morrownr/USB-WiFi
+Atheros drivers.
 
 
-Question: I bought two rtl8812au adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
+Question: I bought two rtl8812au based adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
 
-Answer: You can't. Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in the same computer. I recommend adapters with the mt7612u chipset if you are looking for AC 1200+ adapters. You can get more information and links at the following site:
-
-https://github.com/morrownr/USB-WiFi
+Answer: You can't. Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in the same computer.
 
 
 Question: Why do you recommend Mediatek based adapters when you maintain this repo for a Realtek driver?
 
-Answer: Many new Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. If users want a PCIe, mPCIe, SDIO or other implementation then Intel, Mediatek or Atheros are good solutions. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards for USB WiFi adapters. Realtek drivers are problematic in many ways. You have been WARNED. For information about usb wifi adapters:
+Answer: Many new Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards for USB WiFi adapters. Realtek drivers are problematic in many ways. You have been WARNED. For information about usb wifi adapters:
 
 https://github.com/morrownr/USB-WiFi
 
