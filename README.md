@@ -48,12 +48,12 @@ Note: A FAQ is available at the end of this document.
 ### Compatible Kernels
 
 - Kernels: 4.4 - 5.11 (Realtek)
-- Kernels: 5.12 - 5.14 (community support)
+- Kernels: 5.12 - 5.15 (community support)
 
 ### Tested Linux Distributions
 
 - Arch Linux (kernel 5.4)
-- Arch Linux (kernel 5.9)
+- Arch Linux (kernel 5.11)
 
 - Fedora (kernel 5.11)
 
