@@ -21,7 +21,7 @@
   * IBSS
   * Managed
   * AP (see *Bridged Wireless Access Point* located in the main directory of this repo)
-  * Monitor
+  * Monitor (supports packet injection)
   * P2P-client
   * P2P-GO
 - USB mode control
@@ -32,7 +32,7 @@
 - SU Beamformee and MU Beamformee control
 - SU Beamformer control
 
-Note: WPA3-SAE support is in this driver but currently, almost all Linux distros will require you to download, compile and install the current master of wpa_supplicant at the following site:
+Note: WPA3-SAE support is in this driver, but almost all Linux distros will currently require you to download, compile and install the current master of wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
@@ -52,8 +52,7 @@ Note: A FAQ is available at the end of this document.
 
 ### Tested Linux Distributions
 
-- Arch Linux (kernel 5.4)
-- Arch Linux (kernel 5.11)
+- Arch Linux (kernels 5.4 and 5.11)
 
 - Fedora (kernel 5.11)
 
@@ -69,8 +68,7 @@ Note: A FAQ is available at the end of this document.
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
 - Ubuntu 21.04 (kernel 5.11)
-- Ubuntu 20.10 (kernel 5.8)
-- Ubuntu 20.04 (kernel 5.4)
+- Ubuntu 20.xx (kernels 5.4 and 5.8)
 
 ### Download Locations for Tested Linux Distributions
 
