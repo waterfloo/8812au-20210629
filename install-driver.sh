@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20210917"
+SCRIPT_VERSION="20211002"
 
 DRV_NAME="rtl8812au"
 DRV_VERSION="5.13.6"
@@ -86,6 +86,8 @@ then
 fi
 
 echo "The driver was installed successfully."
+
+rfkill unblock wlan
 
 if [ $NO_PROMPT -ne 1 ]
 then
