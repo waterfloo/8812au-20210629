@@ -26,12 +26,11 @@
   * P2P-GO
 - USB mode control
 - Log level control
-- LED control
 - VHT control (allows 80 MHz channel width in AP mode)
 - SU Beamformee and MU Beamformee control
 - SU Beamformer control
 
-Note: WPA3-SAE support is in this driver, but almost all Linux distros will currently require you to download, compile and install the current master of wpa_supplicant at the following site:
+Note: WPA3-SAE support is in this driver, however, almost all Linux distros will currently require you to download, compile and install the current master of wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
@@ -39,6 +38,14 @@ If there is interest, I will develop and post a guide.
 
 Note: A FAQ is available at the end of this document.
 
+### Problem Reporting
+
+Problem reports go in ```Issues```.
+
+Problem reports should include the information obtained with the following command:
+```bash
+$ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status && iw dev
+```
 ### Compatible CPUs
 
 - x86, amd64
@@ -162,16 +169,13 @@ Step 3: Install the required packages (select the option for the OS you are usin
     to uninstall it and reinstall the correct version.
 
     If using other methods, please follow the instructions provided by those methods.
-
 ```
-
 ```
     Option for Fedora
 
     # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
 ```
 Step 4: Create a directory to hold the downloaded driver
-
 ```bash
 $ mkdir ~/src
 ```

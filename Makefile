@@ -1302,7 +1302,7 @@ endif
 
 ifeq ($(CONFIG_LED_CONTROL), y)
 EXTRA_CFLAGS += -DCONFIG_LED_CONTROL
-ifeq ($(CONFIG_RTL8822B), y)
+ifeq ($(CONFIG_RTL8812A), y)
 EXTRA_CFLAGS += -DCONFIG_SW_LED -DCONFIG_RTW_SW_LED
 endif
 ifeq ($(CONFIG_LED_ENABLE), y)
@@ -2263,7 +2263,7 @@ ARCH := arm
 CROSS_COMPILE := /home/android_sdk/Telechips/v13.05_r1-tcc-android-4.2.2_tcc893x-evm_build/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 KSRC := /home/android_sdk/Telechips/v13.05_r1-tcc-android-4.2.2_tcc893x-evm_build/kernel
 MODULE_NAME := wlan
-endif 
+endif
 
 ifeq ($(CONFIG_PLATFORM_RTL8197D), y)
 EXTRA_CFLAGS += -DCONFIG_BIG_ENDIAN -DCONFIG_PLATFORM_RTL8197D
@@ -2563,4 +2563,3 @@ clean:
 	rm -fr *.mod.c *.mod *.o .*.cmd *.ko *~
 	rm -fr .tmp_versions
 endif
-
