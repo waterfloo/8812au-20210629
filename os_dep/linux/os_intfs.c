@@ -142,10 +142,6 @@ int rtw_check_fw_ps = 1;
 int rtw_early_mode = 1;
 #endif
 
-#ifdef CONFIG_SW_LED
-int rtw_led_ctrl = 1; // default to blink
-#endif
-
 int rtw_usb_rxagg_mode = 2;/* RX_AGG_DMA=1, RX_AGG_USB=2 */
 module_param(rtw_usb_rxagg_mode, int, 0644);
 
@@ -615,11 +611,6 @@ module_param(rtw_pci_aspm_enable, int, 0644);
 
 #ifdef CONFIG_TX_EARLY_MODE
 module_param(rtw_early_mode, int, 0644);
-#endif
-
-#ifdef CONFIG_SW_LED
-module_param(rtw_led_ctrl, int, 0644);
-MODULE_PARM_DESC(rtw_led_ctrl,"Led Control: 0=Always off, 1=Blink, 2=Always on");
 #endif
 
 #ifdef CONFIG_ADAPTOR_INFO_CACHING_FILE

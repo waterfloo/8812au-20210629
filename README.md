@@ -20,8 +20,8 @@
 - Supported interface modes
   * IBSS
   * Managed
-  * AP (see *Bridged Wireless Access Point* located in the main directory of this repo)
-  * Monitor (supports packet injection)
+  * AP (see ```Bridged Wireless Access Point```)
+  * Monitor (supports packet injection) (see ```Monitor_Mode-Realtek```)
   * P2P-client
   * P2P-GO
 - USB mode control
@@ -30,11 +30,11 @@
 - SU Beamformee and MU Beamformee control
 - SU Beamformer control
 
-Note: WPA3-SAE support is in this driver, however, almost all Linux distros will currently require you to download, compile and install the current master of wpa_supplicant at the following site:
+Note: WPA3-SAE support is in this driver, however, for it to work in almost all Linux distros, you will need to download, compile and install the current master of wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
-If there is interest, I will develop and post a guide.
+If there is interest, I will consider making and posting a guide. I am very busy so if anyone is interested in making a guide/checklist, I will add it to the README.
 
 Note: A FAQ is available at the end of this document.
 
