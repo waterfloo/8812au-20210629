@@ -94,6 +94,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 * Alfa AWUS036AC
 * Alfa AWUS036ACH
+* ASUS USB-AC56 Dual-Band AC1200 Adapter (H/W ver. A1)
 * Belkin F9L1109
 * Buffalo - WI-U3-866D
 * Edimax EW-7822UAC
