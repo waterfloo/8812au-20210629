@@ -1565,6 +1565,7 @@ static int rtw_cfgvendor_logger_get_rx_pkt_fates(struct wiphy *wiphy,
 }
 
 #endif /* CONFIG_RTW_CFGVENDOR_WIFI_LOGGER */
+
 #ifdef CONFIG_RTW_WIFI_HAL
 #ifdef CONFIG_RTW_CFGVENDOR_RANDOM_MAC_OUI
 

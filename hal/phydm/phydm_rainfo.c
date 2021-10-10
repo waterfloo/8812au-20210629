@@ -1287,7 +1287,6 @@ void phydm_ra_h2c(void *dm_void, u8 sta_idx, u8 dis_ra, u8 dis_pt,
 	PHYDM_DBG(dm, DBG_RA, "%s ======>\n", __func__);
 	PHYDM_DBG(dm, DBG_RA, "MACID=%d\n", sta->mac_id);
 	
-
 #ifdef PHYDM_POWER_TRAINING_SUPPORT
 	if ((dm->support_ability & ODM_BB_PWR_TRAIN) && !dm->is_disable_power_training)
 		dis_pt = false;
