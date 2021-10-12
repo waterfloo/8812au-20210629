@@ -5,8 +5,11 @@ https://github.com/morrownr/8821au-20210708
 ```
 Notes: 
 
-"$ sudo iw dev" does not display channel and txpower information correctly.
+```$ sudo iw dev``` may not display channel and txpower information correctly.
 This appears to be a cosmetic problem.
+
+Changing the name of a wireless interface is not working currently. It is not
+clear where the problem is.
 
 ### For Debian based Linux Distros such as:
 ```
@@ -63,10 +66,10 @@ sudo airmon-ng check kill
 
 Option 2, another way that works for me on Linux Mint and Ubuntu:
 
-Note: I use multiple wifi adapters in my system and I need to stay connected
+Note: I use multiple wifi adapters in my systems and I need to stay connected
 to the internet while testing. This option works well for me and allows
-me to stay connected by allowing Network Manager to continue managing <wlan1>
-while <wlan0> is used for monitor mode.
+me to stay connected by allowing Network Manager to continue managing interfaces
+that are not marked as unmanaged.
 
 Ensure Network Manager doesn't cause problems
 ```
@@ -75,20 +78,10 @@ sudo nano /etc/NetworkManager/NetworkManager.conf
 add
 ```
 [keyfile]
-unmanaged-devices=interface-name:<wlan0>;interface-name:mon0
+unmanaged-devices=interface-name:<wlan0>
 ```
 
-Ensure wpa_supplicant doesn't cause problems
-```
-sudo nano /etc/dhcpcd.conf
-```
-add
-```
-interface <wlan0>
-        nohook wpa_supplicant
-```
-Note: The above tells Network Manager and wpa_supplicant to leave the <wlan0>
-interface alone.
+Note: The above tells Network Manager to leave the <wlan0> interface alone.
 
 ```
 sudo reboot
@@ -101,9 +94,10 @@ sudo reboot
 Option 1. Note: This option is seriously broken currently.
 ```
 sudo airmon-ng start <wlan0>
-
-Note: I have provided a script called to ```start-mon.sh``` to automate this process.
 ```
+
+Note: I have provided a script called ```start-mon.sh``` to automate the
+following option.
 
 Option 2.
 
@@ -260,7 +254,7 @@ sudo ip link set <wlan0> up
 
 ### airodump-ng can receive and interpret key strokes while running.
 
-The following list describes the currently assigned keys and supposed actions:
+The following list describes the currently assigned keys and supported actions:
 
 
 a
