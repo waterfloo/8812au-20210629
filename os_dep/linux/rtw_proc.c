@@ -5708,6 +5708,10 @@ const struct rtw_proc_hdl adapter_proc_hdls[] = {
 
 	RTW_PROC_HDL_SSEQ("cur_beacon_keys", proc_get_cur_beacon_keys, NULL),
 
+#ifdef CONFIG_RTW_SW_LED
+	RTW_PROC_HDL_SSEQ("led_ctrl", proc_get_led_ctrl, proc_set_led_ctrl),
+#endif
+
 #ifdef CONFIG_WAR_OFFLOAD
 	RTW_PROC_HDL_SSEQ("war_offload_enable", proc_get_war_offload_enable, proc_set_war_offload_enable),
 	RTW_PROC_HDL_SSEQ("war_offload_ipv4_addr", NULL, proc_set_war_offload_ipv4_addr),
