@@ -72,9 +72,9 @@
 
 #define CONFIG_RECV_REORDERING_CTRL	1
 
-/*#define CONFIG_SUPPORT_USB_INT*/
-#ifdef CONFIG_SUPPORT_USB_INT
-/*#define CONFIG_USB_INTERRUPT_IN_PIPE	1*/
+ /* #define CONFIG_SUPPORT_USB_INT */
+ #ifdef CONFIG_SUPPORT_USB_INT
+/* #define CONFIG_USB_INTERRUPT_IN_PIPE	1 */
 #endif
 
 #ifdef CONFIG_POWER_SAVING
@@ -176,6 +176,7 @@
 #endif /* CONFIG_RTW_LED */
 
 #define CONFIG_GLOBAL_UI_PID
+
 /* #define CONFIG_ADAPTOR_INFO_CACHING_FILE */ /* now just applied on 8192cu only, should make it general... */
 /* #define CONFIG_RESUME_IN_WORKQUEUE */
 /* #define CONFIG_SET_SCAN_DENY_TIMER */
