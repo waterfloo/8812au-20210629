@@ -1,4 +1,8 @@
-## Monitor Mode Testing for...
+## Monitor Mode Testing
+
+Purpose: Provide information and tools for testing and using monitor mode with
+the following drivers:
+
 ```
 https://github.com/morrownr/8812au-20210629
 https://github.com/morrownr/8821au-20210708
@@ -59,12 +63,12 @@ to substitute the name of your wifi interface while using this document.
 
 ### Disable interfering processes
 
-Option 1, recommended for Kali and Raspberry Pi OS.
+Option 1
 ```
 sudo airmon-ng check kill
 ```
 
-Option 2, another way that works for me on Linux Mint and Ubuntu:
+Option 2, another way that works for me on Linux Mint:
 
 Note: I use multiple wifi adapters in my systems and I need to stay connected
 to the internet while testing. This option works well for me and allows
@@ -252,6 +256,7 @@ sudo ip link set <wlan0> up
 
 -----
 
+```
 ### airodump-ng can receive and interpret key strokes while running.
 
 The following list describes the currently assigned keys and supported actions:
@@ -314,6 +319,7 @@ Change column to sort by, which currently includes:
  Strongest Ciphersuite;
  Strongest Authentication;
  ESSID
+```
 
 -----
 
