@@ -22,7 +22,7 @@
   * IBSS
   * Managed
   * AP (see [Bridged_Wireless_Access_Point.md](https://github.com/morrownr/8812au-20210629/blob/main/Bridged_Wireless_Access_Point.md))
-  * Monitor (see [Monitor_Mode.md]())
+  * Monitor (see [Monitor_Mode.md](https://github.com/morrownr/8812au-20210629/blob/main/Monitor_Mode.md))
   * P2P-client
   * P2P-GO
 - USB mode control
