@@ -1,12 +1,8 @@
-## Monitor Mode Testing
+## Monitor Mode
 
 Purpose: Provide information and tools for testing and using monitor mode with
-the following drivers:
+this driver.
 
-```
-https://github.com/morrownr/8812au-20210629
-https://github.com/morrownr/8821au-20210708
-```
 Notes: 
 
 ```$ sudo iw dev``` may not display channel and txpower information correctly.
@@ -101,7 +97,7 @@ sudo airmon-ng start <wlan0>
 ```
 
 Note: I have provided a script called ```start-mon.sh``` to automate the
-following option.
+following option. Please give it a try and make suggestions to improve it.
 
 Option 2.
 
@@ -249,11 +245,9 @@ iw dev
 
 ### Change txpower
 ```
-sudo ip link set <wlan0> down
-sudo iw dev <wlan0> set txpower fixed 1600 (1600 = 16 dBm)
-sudo ip link set <wlan0> up
+sudo iw dev <wlan0> set txpower fixed 1600
 ```
-
+Note:  1600 = 16 dBm
 -----
 
 ```

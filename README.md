@@ -17,11 +17,12 @@
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
   * Supports power saving mode
+  * Supports packet injection
 - Supported interface modes
   * IBSS
   * Managed
-  * AP (see ```Bridged Wireless Access Point```)
-  * Monitor (supports packet injection) (see ```Monitor_Mode-Realtek```)
+  * AP (see [Bridged_Wireless_Access_Point.md](https://github.com/morrownr/8812au-20210629/blob/main/Bridged_Wireless_Access_Point.md))
+  * Monitor (see [Monitor_Mode.md]())
   * P2P-client
   * P2P-GO
 - USB mode control
@@ -89,7 +90,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 ### Tested Hardware
 
-- [Alfa - AWUS036ACH](https://www.amazon.com/dp/B00VEEBOPG)
+- [Alfa - AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
 
 ### Compatible Devices
 

@@ -1,4 +1,4 @@
-2021-06-07
+2021-10-15
 
 ## Bridged Wireless Access Point
 
@@ -69,10 +69,9 @@ shows actual usage of 360 mA during heavy load and usage of 180 mA during
 light loads. This is much lower power usage than most AC1200 class adapters
 which makes this adapter a good choice for a Raspberry Pi based access point.
 
+-----
 
 #### Setup Steps
-
------
 
 USB WiFi adapter driver installation, if required, should be performed and tested
 prior to continuing.
