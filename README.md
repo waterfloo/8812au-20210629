@@ -16,8 +16,8 @@
 - IEEE 802.11b/g/n/ac Client mode
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
-  * Supports power saving mode
-  * Supports packet injection
+- Power saving modes
+- Packet injection
 - Supported interface modes
   * IBSS
   * Managed
@@ -343,17 +343,19 @@ $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 ### FAQ:
 
+Question: Why won't DFS channels work in AP mode?
+
+Answer: I have looked at the source code for several USB WiFi adapters and I have found no evidence that any support DFS channels in AP mode. It appears that this is simply not a supported feature on USB WiFi adapters
+
 Question: What interface combinations does this driver support?
 
 Answer: None. Realtek out-of-kernel drivers, including this driver, do not
-support interface combinations. If you need support for interface combinations,
-I suggest adapters based on the Mediatek chipsets.
+support interface combinations. If you need support for interface combinations, I suggest adapters based on the Mediatek chipsets.
 
 
 Question: What extended features does this driver support?
 
-Answer: None. For extended features, you need an adapter that uses Mediatek or
-Atheros drivers.
+Answer: None. For extended features, you need an adapter that uses Mediatek or Atheros drivers.
 
 
 Question: I bought two rtl8812au based adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
