@@ -78,7 +78,7 @@ sudo nano /etc/NetworkManager/NetworkManager.conf
 add
 ```
 [keyfile]
-unmanaged-devices=interface-name:<wlan0>
+unmanaged-devices=interface-name:<wlan0>;interface-name:wlan0mon
 ```
 
 Note: The above tells Network Manager to leave the <wlan0> interface alone.
