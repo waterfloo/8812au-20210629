@@ -64,6 +64,8 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 - Fedora (kernel 5.11)
 
+- Debian 11 (kernels 5.10 and 5.15)
+
 - Kali Linux (kernel 5.10)
 
 - Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernels 5.4 and 5.11)
@@ -81,6 +83,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 ### Download Locations for Tested Linux Distributions
 
 - [Arch Linux](https://www.archlinux.org)
+- [Debian](https://www.debian.org/)
 - [Fedora](https://getfedora.org)
 - [Kali Linux](https://www.kali.org/)
 - [Linux Mint](https://www.linuxmint.com)
@@ -227,7 +230,9 @@ $ sudo ./install-driver.sh
 
 ### Driver Options
 
-A file called `8812au.conf` will be installed in `/etc/modeprobe.d` by default.
+A file called `8812au.conf` will be installed in `/etc/modprobe.d` by default.
+
+Note: Step 9 of the installation script will prompt you to edit the options before rebooting.
 
 Location: `/etc/modprobe.d/8812au.conf`
 
@@ -237,7 +242,7 @@ To edit the driver options file, run the `edit-options.sh` script.
 ```bash
 $ sudo ./edit-options.sh
 ```
-Documentation for Driver Options is included in the file `8812au.conf`.
+Note: Documentation for Driver Options is included in the file `8812au.conf`.
 
 ### Removal of the Driver
 
