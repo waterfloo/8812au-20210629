@@ -221,7 +221,7 @@ Run a preparation script
 ```
 Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 ```bash
-$ sudo ./install-driver.sh
+    $ sudo ./install-driver.sh
 
     Note: If you elect to skip the reboot at the end of the installation script,
     the driver may not be loaded immediately and the driver options will not be
@@ -266,10 +266,6 @@ $ cd ~/src/8812au-20210629
 Step 3: Run the removal script
 ```bash
 $ sudo ./remove-driver.sh
-```
-Step 4: Reboot
-```bash
-$ sudo reboot
 ```
 ### Recommended WiFi Router/ Access Point Settings
 

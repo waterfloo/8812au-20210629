@@ -75,7 +75,7 @@ then
 #	Option 1 - rename the interface
 #	ip link set $iface0 name $iface0mon
 #	Option 2 - do not rename the interface
-	$iface0mon=$iface0
+	iface0mon=$iface0
 
 #	Set monitor mode
 #	iw dev <devname> set monitor <flag>*
