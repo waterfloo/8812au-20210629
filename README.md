@@ -26,6 +26,7 @@
   * P2P-client
   * P2P-GO
 - Log level control
+- LED control
 - Power saving control
 - VHT control (allows 80 MHz channel width in AP mode)
 - SU Beamformee and MU Beamformee control
@@ -215,9 +216,6 @@ Run a preparation script
     Option for 64 bit operating systems to be installed to Raspberry Pi hardware
 
     $ ./raspi64.sh
-
-    Note: I will only address issues having to do with the 64 bit version of the
-    Raspberry Pi OS once it is out of beta and is released as generally available.
 ```
 Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 ```bash
