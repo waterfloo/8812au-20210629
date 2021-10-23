@@ -8,9 +8,6 @@ Notes:
 ```$ sudo iw dev``` may not display channel and txpower information correctly.
 This appears to be a cosmetic problem.
 
-Changing the name of a wireless interface is not working currently. It is not
-clear where the problem is.
-
 ### For Debian based Linux Distros such as:
 ```
 Kali Linux
