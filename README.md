@@ -31,9 +31,10 @@
 - VHT control (allows 80 MHz channel width in AP mode)
 - SU Beamformee and MU Beamformee control
 - SU Beamformer control
+- DFS Channel support and control for AP mode
 - USB mode control
 
-Note: WPA3-SAE support is in this driver, however, for it to work in almost all Linux distros, you will need to download, compile and install the current master of wpa_supplicant at the following site:
+Note: WPA3-SAE support is in this driver, however, for it to work with current Linux distros, you will need to download, compile and install the current master of wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
@@ -356,11 +357,6 @@ $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 -----
 
 ### FAQ:
-
-Question: Why won't DFS channels work in AP mode?
-
-Answer: I have looked at the source code for several USB WiFi adapters and I have found no evidence that any support DFS channels in AP mode. It appears that this is simply not a supported feature on USB WiFi adapters.
-
 
 Question: What interface combinations does this driver support?
 
