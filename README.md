@@ -21,8 +21,8 @@
 - Supported interface modes
   * IBSS
   * Managed
-  * AP (see [Bridged_Wireless_Access_Point.md](https://github.com/morrownr/8812au-20210629/blob/main/Bridged_Wireless_Access_Point.md))
-  * Monitor (see [Monitor_Mode.md](https://github.com/morrownr/8812au-20210629/blob/main/Monitor_Mode.md))
+  * AP (see ```Bridged_Wireless_Access_Point.md```)
+  * Monitor (see ```Monitor_Mode.md```)
   * P2P-client
   * P2P-GO
 - Log level control
@@ -57,7 +57,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 ### Compatible Kernels
 
-- Kernels: 4.4 - 5.11 (Realtek)
+- Kernels: 4.4  - 5.11 (Realtek)
 - Kernels: 5.12 - 5.15 (community support)
 
 ### Tested Linux Distributions
@@ -74,14 +74,12 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
-- Manjaro 20.1 (kernel 5.9)
-- Manjaro 21.1 (kernel 5.13)
+- Manjaro 20.1 (kernel 5.9) and 21.1 (kernel 5.13)
 
 - Raspberry Pi OS (2021-05-07) (ARM 32 bit) (kernel 5.10)
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
-- Ubuntu 21.04 (kernel 5.11)
-- Ubuntu 20.xx (kernels 5.4 and 5.8)
+- Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.14)
 
 ### Download Locations for Tested Linux Distributions
 
