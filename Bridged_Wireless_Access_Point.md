@@ -78,12 +78,21 @@ which makes this adapter a good choice for a Raspberry Pi based access point.
 USB WiFi adapter driver installation, if required, should be performed and tested
 prior to continuing.
 
-Note: For USB3 adapters based on the Realtek rtl8812au, rtl8814au, and rtl8812bu
+Note: For USB3 adapters based on the Realtek rtl8812au and rtl8814au
 chipsets, the following module parameters may be needed for best performance
 when the adapter is set to support 5 GHz band:
+
 ```
 rtw_vht_enable=2 rtw_switch_usb_mode=1 rtw_beamform_cap=1
 ```
+
+Note: For USB3 adapters based on the Realtek rtl8812bu
+chipsets, the following module parameters may be needed for best performance
+when the adapter is set to support 5 GHz band:
+```
+rtw_vht_enable=2 rtw_switch_usb_mode=2 rtw_beamform_cap=1
+```
+
 Note: For USB3 adapters based on the Realtek rtl8812au, rtl8814au, and rtl8812bu
 chipsets, the following module parameters may be needed for best performance
 when the adapter is set to support 2.4 GHz band:

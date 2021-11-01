@@ -13,11 +13,16 @@
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
+- WPA3 (see note below)
 - IEEE 802.11b/g/n/ac Client mode
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
 - Power saving modes
+- Wireshark compatible
+- Aircrack-ng compatible
 - Packet injection
+- hostapd compatible
+- AP mode DFS support
 - Supported interface modes
   * IBSS
   * Managed
@@ -31,7 +36,7 @@
 - VHT control (allows 80 MHz channel width in AP mode)
 - SU Beamformee and MU Beamformee control
 - SU Beamformer control
-- DFS Channel support and control for AP mode
+- AP mode DFS Channel control
 - USB mode control
 
 Note: WPA3-SAE support is in this driver, however, for it to work with current Linux distros, you will need to download, compile and install the current master of wpa_supplicant at the following site:
@@ -131,7 +136,7 @@ There is no need to disable Secure Mode to install this driver. If Secure Mode i
 
 ### Installation Steps
 
-Step 1: Open a terminal (e.g.: Ctrl+Alt+T)
+Step 1: Open a terminal (e.g. Ctrl+Alt+T)
 
 Step 2: Update system package information (select the option for the OS you are using)
 
@@ -202,7 +207,7 @@ Step 7: Move to the newly created driver directory
 ```bash
 $ cd ~/src/8812au-20210629
 ```
-Step 8: **Only for Raspberry Pi systems**
+Step 8: **Only for Raspberry Pi systems (based on ARM or ARM64 CPUs)**
 
 Warning: This step only applies if you are installing to Raspberry Pi *hardware*. You should skip this step if installing to x86 or amd64 based systems.
 
@@ -216,6 +221,12 @@ Run a preparation script
     Option for 64 bit operating systems to be installed to Raspberry Pi hardware
 
     $ ./raspi64.sh
+
+    Note: Other ARM or ARM64 based systems will require modifications
+    similar to those provided in the above scripts for Raspberry Pi hardware but
+    the number and variety of different ARM and ARM64 based systems makes
+    supporting each system unpractical so you will need to research the needs of
+    your system and make the appropriate modifications. 
 ```
 Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 ```bash
@@ -255,7 +266,7 @@ Note: This script removes everything that has been installed, with the exception
 of the packages installed in Step 3 and the driver directory. The driver directory
 can and probably should be deleted in most cases after running the script.
 
-Step 1: Open a terminal (e.g.: Ctrl+Alt+T)
+Step 1: Open a terminal (e.g. Ctrl+Alt+T)
 
 Step 2: Move to the driver directory
 ```bash
