@@ -78,21 +78,12 @@ which makes this adapter a good choice for a Raspberry Pi based access point.
 USB WiFi adapter driver installation, if required, should be performed and tested
 prior to continuing.
 
-Note: For USB3 adapters based on the Realtek rtl8812au and rtl8814au
+Note: For USB3 adapters based on the Realtek rtl8812au, rtl8814au, and rtl8812bu
 chipsets, the following module parameters may be needed for best performance
 when the adapter is set to support 5 GHz band:
-
 ```
 rtw_vht_enable=2 rtw_switch_usb_mode=1 rtw_beamform_cap=1
 ```
-
-Note: For USB3 adapters based on the Realtek rtl8812bu
-chipsets, the following module parameters may be needed for best performance
-when the adapter is set to support 5 GHz band:
-```
-rtw_vht_enable=2 rtw_switch_usb_mode=2 rtw_beamform_cap=1
-```
-
 Note: For USB3 adapters based on the Realtek rtl8812au, rtl8814au, and rtl8812bu
 chipsets, the following module parameters may be needed for best performance
 when the adapter is set to support 2.4 GHz band:
@@ -320,9 +311,14 @@ ieee80211ac=1
 # mt7612u
 #vht_capab=[RXLDPC][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][MAX-A-MPDU-LEN-EXP3][RX-ANTENNA-PATTERN][TX-ANTENNA-PATTERN]
 #
-# rtl8812au - rtl8811au -  rtl8812bu - rtl8811cu - rtl8814au
-vht_capab=[MAX-MPDU-11454][SHORT-GI-80][SU-BEAMFORMER][HTC-VHT]
-# Note: [TX-STBC-2BY1] causes problems
+# rtl8812au - rtl8812bu
+vht_capab=[MAX-MPDU-11454][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][SU-BEAMFORMER][SOUNDING-DIMENSION-2][HTC-VHT][MAX-A-MPDU-EXP7]
+# rtl8814au
+#vht_capab=[MAX-MPDU-11454][SHORT-GI-80][SU-BEAMFORMER][HTC-VHT]
+# rtl8811au
+#vht_capab=[MAX-MPDU-11454][SHORT-GI-80][RX-STBC-1][HTC-VHT][MAX-A-MPDU-LEN-EXP7]
+#
+# Note: [TX-STBC-2BY1] may cause problems
 #
 # Required for 80 MHz width channel operation
 vht_oper_chwidth=1
