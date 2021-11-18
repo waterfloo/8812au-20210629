@@ -272,7 +272,7 @@ To edit the driver options file, run the `edit-options.sh` script
 sudo ./edit-options.sh
 ```
 
-Note: Documentation for Driver Options is included in the file `88x2bu.conf`.
+Note: Documentation for Driver Options is included in the file `8812au.conf`.
 
 ## Removal of the Driver
 
