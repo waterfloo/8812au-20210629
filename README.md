@@ -27,7 +27,7 @@
   * IBSS
   * Managed
   * AP (see ```Bridged_Wireless_Access_Point.md```)
-  * Monitor (see ```Monitor_Mode.md```)
+  * Monitor (see ```Monitor_Mode.md and start-mon.sh```)
   * P2P-client
   * P2P-GO
 - Concurrent mode (coming soon)
@@ -98,8 +98,9 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 ## Compatible Devices
 
-* Alfa AWUS036AC
-* Alfa AWUS036ACH
+* [ALFA AWUS036AC](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ac-802-11ac-long-range-dual-band-wifi-usb-adapter)
+* [ALFA AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
+* [ALFA AWUS036EAC](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036eac-802-11ac-ac1200-dual-band-wifi-usb-adapter-dongle)
 * ASUS USB-AC56 Dual-Band AC1200 Adapter (H/W ver. A1)
 * Belkin F9L1109
 * Buffalo - WI-U3-866D
