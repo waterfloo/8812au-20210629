@@ -13,7 +13,7 @@
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
-- WPA3 (see note in FAQ)
+- WPA3 (see issue with title `How to Enable WPA3 support`)
 - IEEE 802.11b/g/n/ac Client mode
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
@@ -280,14 +280,16 @@ Note: Documentation for Driver Options is included in the file `8812au.conf`.
 
 Note: This script should be used in the following situations:
 
-- the driver is no longer needed
-- a fresh start with default settings is needed
-- a new version of the driver needs to be installed
-- a major operating system upgrade is going to be applied
+- if driver installation fails
+- if the driver is no longer needed
+- if a fresh start with default settings is needed
+- if a new version of the driver needs to be installed
+- if a distro version upgrade is going to be installed
 
-Note: This script removes everything that has been installed, with the exception
-of the packages installed in Step 3 and the driver directory. The driver directory
-can and probably should be deleted in most cases after running the script.
+Note: This script removes everything that has been installed, with the
+exception of the packages installed in Step 3 and the driver directory.
+The driver directory can and probably should be deleted in most cases
+after running this script.
 
 #### Step 1: Open a terminal (e.g. Ctrl+Alt+T)
 
@@ -412,8 +414,7 @@ of wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
-If there is interest, I will consider making and posting a guide. I am very busy
-so if anyone is interested in making a guide/checklist.
+See issue titled `How to Enable WPA3 support` for more information.
 
 
 Question: I bought two rtl8812au based adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
