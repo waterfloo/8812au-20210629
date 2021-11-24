@@ -2,6 +2,10 @@
 
 -----
 
+##### A FAQ is available at the end of this document.
+
+-----
+
 ## 8812au ( 8812au.ko ) :rocket:
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
@@ -13,7 +17,7 @@
 
 - IEEE 802.11 b/g/n/ac WiFi compliant
 - 802.1x, WEP, WPA TKIP and WPA2 AES/Mixed mode for PSK and TLS (Radius)
-- WPA3 (see issue with title `How to Enable WPA3 support`)
+- WPA3 (see issue #17)
 - IEEE 802.11b/g/n/ac Client mode
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
@@ -39,8 +43,6 @@
 - SU Beamformer control
 - AP mode DFS channel control
 - USB mode control
-
-## A FAQ is available at the end of this document.
 
 ## Problem Reporting
 
@@ -409,17 +411,17 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 Question: Is WPA3 supported?
 
 Answer: WPA3-SAE support is in this driver, however, for it to work with current
-Linux distros, you will need to download, compile and install the current master
-of wpa_supplicant at the following site:
+Linux distros, you will likely need to download, compile and install the current
+master of wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
-See issue titled `How to Enable WPA3 support` for more information.
+See issue #17
 
 
 Question: I bought two rtl8812au based adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
 
-Answer: You can't without considerable technical skills.  Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in the same computer.
+Answer: You can't without considerable technical skills.  Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in a comfiguration where one is in AP mode and the other in client mode on the same computer.
 
 
 Question: Why do you recommend Mediatek based adapters when you maintain this repo for a Realtek driver?
