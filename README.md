@@ -6,6 +6,15 @@
 
 -----
 
+##### Problem reports go in ```Issues```.
+
+Problem reports should include the information obtained with the following command:
+```bash
+$ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status && iw dev
+```
+
+-----
+
 ## 8812au ( 8812au.ko ) :rocket:
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
@@ -21,20 +30,22 @@
 - IEEE 802.11b/g/n/ac Client mode
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
+  * Support WPA/WPA2 TLS client
 - Power saving modes
 - Wireshark compatible
 - Aircrack-ng compatible
 - Packet injection
 - hostapd compatible
 - AP mode DFS channel support
+- Miracast
 - Supported interface modes
   * IBSS
   * Managed
-  * AP (see ```Bridged_Wireless_Access_Point.md```)
-  * Monitor (see ```Monitor_Mode.md and start-mon.sh```)
+  * AP      (see `Bridged_Wireless_Access_Point.md` the docs folder.)
+  * Monitor (see `Monitor_Mode.md in the docs folder.)
   * P2P-client
   * P2P-GO
-- Concurrent mode (coming soon)
+  * Concurrent (see Concurrent_Mode.md in the `docs` folder.)
 - Log level control
 - LED control
 - Power saving control
@@ -44,18 +55,11 @@
 - AP mode DFS channel control
 - USB mode control
 
-## Problem Reporting
-
-Problem reports go in ```Issues```.
-
-Problem reports should include the information obtained with the following command:
-```bash
-$ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status && iw dev
-```
 ## Compatible CPUs
 
 - x86, amd64
 - ARM, ARM64
+- MIPS
 
 ## Compatible Kernels
 
@@ -224,7 +228,15 @@ git clone https://github.com/morrownr/8812au-20210629.git
 cd ~/src/8812au-20210629
 ```
 
-#### Step 8:  This step is only for Raspberry Pi systems
+#### Step 8:  Optionally enable Concurrent Mode
+
+Note: see `Concurrent_Mode.md` in the `docs` folder.
+
+```
+./cmode-on.sh
+```
+
+#### Step 9:  This step is only for Raspberry Pi systems
 
 Warning: This step only applies if you are installing to Raspberry Pi *hardware*.
 You should skip this step if installing to x86 or amd64 based systems.
@@ -250,7 +262,7 @@ variety of different ARM and ARM64 based systems makes supporting each system
 unpractical so you will need to research the needs of your system and make the
 appropriate modifications. 
 
-#### Step 9: Run the installation script (For automated builds, use _NoPrompt_ as an option)
+#### Step 10: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 
 ```
 sudo ./install-driver.sh
@@ -264,7 +276,7 @@ applied. Rebooting is strongly recommended.
 
 A file called `8812au.conf` will be installed in `/etc/modprobe.d` by default.
 
-Note: Step 9 of the installation instructions will prompt you to edit the options
+Note: Step 10 of the installation instructions will prompt you to edit the options
 before rebooting.
 
 Location: `/etc/modprobe.d/8812au.conf`
