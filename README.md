@@ -41,11 +41,11 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 - Supported interface modes
   * IBSS
   * Managed
-  * AP      (see `Bridged_Wireless_Access_Point.md` the docs folder.)
-  * Monitor (see `Monitor_Mode.md in the docs folder.)
+  * AP      (see `Bridged_Wireless_Access_Point.md` the `docs` folder.)
+  * Monitor (see `Monitor_Mode.md` in the `docs` folder.)
   * P2P-client
   * P2P-GO
-  * Concurrent (see Concurrent_Mode.md in the `docs` folder.)
+  * Concurrent (see `Concurrent_Mode.md` in the `docs` folder.)
 - Log level control
 - LED control
 - Power saving control
@@ -76,7 +76,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 - Kali Linux (kernel 5.10)
 
-- Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernels 5.4 and 5.11)
+- Linux Mint 20.2 (Linux Mint based on Ubuntu) (kernels 5.4 and 5.13)
 
 - LMDE 4 (Linux Mint based on Debian) (kernel 4.19)
 
@@ -86,7 +86,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
-- Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.14)
+- Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.13)
 
 ## Download Locations for Tested Linux Distributions
 
