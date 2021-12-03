@@ -30,7 +30,7 @@ $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status
 - IEEE 802.11b/g/n/ac Client mode
   * Supports wireless security for WEP, WPA TKIP and WPA2 AES PSK
   * Supports site survey scan and manual connect
-  * Support WPA/WPA2 TLS client
+  * Supports WPA/WPA2 TLS client
 - Power saving modes
 - Wireshark compatible
 - Aircrack-ng compatible
@@ -256,11 +256,11 @@ Run a preparation script
 ./raspi64.sh
 ```
 
-Note: Other ARM or ARM64 based systems will require modifications similar to
-those provided in the above scripts for Raspberry Pi hardware but the number and
-variety of different ARM and ARM64 based systems makes supporting each system
-unpractical so you will need to research the needs of your system and make the
-appropriate modifications. 
+Note: Other ARM or ARM64 based systems will likely require modifications
+similar to those provided in the above scripts for Raspberry Pi hardware
+but the number and variety of different ARM and ARM64 based systems
+makes supporting each system unpractical so you will need to research
+the needs of your system and make the appropriate modifications. 
 
 #### Step 10: Run the installation script (For automated builds, use _NoPrompt_ as an option)
 
