@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_NAME="remove-driver.sh"
-SCRIPT_VERSION="20211002"
+SCRIPT_VERSION="20211204"
 
 DRV_NAME="rtl8812au"
 DRV_VERSION="5.13.6"
@@ -57,7 +57,7 @@ fi
 if [ $NO_PROMPT -ne 1 ]
    then
        read -p "Are you ready to reboot now? [y/N] " -n 1 -r
-       echo    # move to a new line                                                                                                                                                                            
+       echo                                                                                                                                                                         
        if [[ $REPLY =~ ^[Yy]$ ]]
        then
            reboot

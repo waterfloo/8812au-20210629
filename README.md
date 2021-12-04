@@ -426,7 +426,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 Question: Is WPA3 supported?
 
 Answer: WPA3-SAE support is in this driver according to Realtek,
-however, for it to work with current Linux distros, you will likely need
+however, for it to work with some current Linux distros, you will need
 to download, compile and install the current development version of
 wpa_supplicant at the following site:
 
