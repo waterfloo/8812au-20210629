@@ -229,7 +229,7 @@ git clone https://github.com/morrownr/8812au-20210629.git
 cd ~/src/8812au-20210629
 ```
 
-#### Step 8:  Optionally enable Concurrent Mode
+#### Step 8:  Enable Concurrent Mode (optional)
 
 Note: see `Concurrent_Mode.md` in the `docs` folder.
 
@@ -279,8 +279,7 @@ not be applied. Rebooting is strongly recommended.
 
 A file called `8812au.conf` will be installed in `/etc/modprobe.d` by default.
 
-Note: Step 10 of the installation instructions will prompt you to edit the options
-before rebooting.
+Note: The installation script will prompt you to edit the options.
 
 Location: `/etc/modprobe.d/8812au.conf`
 
@@ -453,7 +452,7 @@ Question: Will you put volunteers to work?
 Answer: Yes. Post a message in `Issues` or `Discussions` if interested.
 
 
-Question: I am having problems with my adapter and I use Virtual Box?
+Question: I am having problems with my adapter and I use Virtualbox?
 
 Answer: The following article may help:
 
