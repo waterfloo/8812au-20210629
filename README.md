@@ -1,15 +1,16 @@
-##### [Click for USB WiFi Adapter Information for Linux](https://github.com/morrownr/USB-WiFi)
+#### [Click for USB WiFi Adapter Information for Linux](https://github.com/morrownr/USB-WiFi)
 
 -----
 
-##### A FAQ is available at the end of this document.
+#### A FAQ is available at the end of this document.
 
 -----
 
-##### Problem reports go in ```Issues```.
+#### Problem reports go in `Issues`.
 
-Problem reports should include the information obtained with the following command:
-```bash
+#### Problem reports should include the information obtained with the following command:
+
+```
 $ sudo uname -a && mokutil --sb-state && lsusb && rfkill list all && dkms status && iw dev
 ```
 
@@ -236,25 +237,27 @@ Note: see `Concurrent_Mode.md` in the `docs` folder.
 ./cmode-on.sh
 ```
 
-#### Step 9:  This step is only for Raspberry Pi systems
+#### Step 9:  Run a script to reconfigure the driver for Raspberry Pi hardware
 
 Warning: This step only applies if you are installing to Raspberry Pi *hardware*.
-You should skip this step if installing to x86 or amd64 based systems.
 
-Run a preparation script
+Warning: You should skip this step if installing to x86 or amd64 based systems.
 
-
-- Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+- Option for the 32 bit Raspberry Pi OS to be installed to Raspberry Pi hardware
 
 ```
-./raspi32.sh
+./raspiOS-32.sh
 ```
 
-- Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+- Option for the 64 bit Raspberry Pi OS to be installed to Raspberry Pi hardware
+       
+```
+./raspiOS-64.sh
+```
 
-```
-./raspi64.sh
-```
+Note: Use the 64 bit option for other 64 bit operating systems to be
+installed to Raspberry Pi hardware. An example is Ubuntu for Raspberry
+Pi.
 
 Note: Other ARM or ARM64 based systems will likely require modifications
 similar to those provided in the above scripts for Raspberry Pi hardware
@@ -268,9 +271,9 @@ the needs of your system and make the appropriate modifications.
 sudo ./install-driver.sh
 ```
 
-Note: If you elect to skip the reboot at the end of the installation script,
-the driver may not be loaded immediately and the driver options will not be
-applied. Rebooting is strongly recommended.
+Note: If you elect to skip the reboot at the end of the installation
+script, the driver may not load immediately and the driver options will
+not be applied. Rebooting is strongly recommended.
 
 ## Driver Options
 
@@ -423,9 +426,10 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 Question: Is WPA3 supported?
 
-Answer: WPA3-SAE support is in this driver, however, for it to work with current
-Linux distros, you will likely need to download, compile and install the current
-master of wpa_supplicant at the following site:
+Answer: WPA3-SAE support is in this driver according to Realtek,
+however, for it to work with current Linux distros, you will likely need
+to download, compile and install the current development version of
+wpa_supplicant at the following site:
 
 https://w1.fi/cgit/
 
@@ -434,7 +438,7 @@ See issue #17
 
 Question: I bought two rtl8812au based adapters and am planning to run one of them as an AP and another as a WiFi client. How do I set that up?
 
-Answer: You can't without considerable technical skills.  Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in a comfiguration where one is in AP mode and the other in client mode on the same computer.
+Answer: You can't without considerable technical skills.  Realtek drivers do not support more than one adapter with the same chipset in the same computer. However, testing has shown that the Mediatek drivers do support more than one adapter with the same chipset in various configurations.
 
 
 Question: Why do you recommend Mediatek based adapters when you maintain this repo for a Realtek driver?
@@ -442,5 +446,19 @@ Question: Why do you recommend Mediatek based adapters when you maintain this re
 Answer: Many new Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards (mac80211) for USB WiFi adapters and the drivers are not maintained in the Linux kernel. These issues make Realtek drivers problematic in many ways. You have been WARNED. For more information about USB WiFi adapters:
 
 https://github.com/morrownr/USB-WiFi
+
+
+Question: Will you put volunteers to work?
+
+Answer: Yes. Post a message in `Issues` or `Discussions` if interested.
+
+
+Question: I am having problems with my adapter and I use Virtual Box?
+
+Answer: The following article may help:
+
+```
+https://null-byte.wonderhowto.com/forum/wifi-hacking-attach-usb-wireless-adapter-with-virtual-box-0324433/
+```
 
 -----
