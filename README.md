@@ -196,7 +196,10 @@ sudo dnf -y update
 sudo zypper update
 ```
 
-Note: If you do not regularly maintain your system by installing updated packages, it is a good idea to not only update system package information but also to install the updated packages followed by a system reboot. The installation can then be continued with step 3.
+Note: If you do not regularly maintain your system by installing updated
+packages, please do so now and then reboot. The rest of the installation
+will appreciate having a fully up to date system to work with. The
+installation can then be continued with Step 3.
 
 #### Step 3: Install the required packages (select the option for the OS you are using)
 
@@ -238,12 +241,14 @@ if using pacman
 sudo pacman -S --noconfirm linux-headers dkms git
 ```
 
-Note: If you are asked to choose a provider, make sure to choose the one that
-corresponds to your version of the linux kernel (for example, "linux510-headers"
-for Linux kernel version 5.10). If you install the incorrect version, you'll have
-to uninstall it and reinstall the correct version.
+Note: If you are asked to choose a provider, make sure to choose the one
+that corresponds to your version of the linux kernel (for example,
+"linux510-headers" for Linux kernel version 5.10). If you install the
+incorrect version, you'll have to uninstall it and install the correct
+version.
 
-If using other methods, please follow the instructions provided by those methods.
+If using other methods, please follow the instructions provided by those
+methods.
 
 #### Step 4: Create a directory to hold the downloaded driver
 
@@ -277,11 +282,13 @@ Note: see `Concurrent_Mode.md` in the `docs` folder.
 ./cmode-on.sh
 ```
 
-#### Step 9:  Run a script to reconfigure the driver for Raspberry Pi hardware
+#### Step 9:  Run a script to reconfigure for Raspberry Pi hardware
 
-Warning: This step only applies if you are installing to Raspberry Pi *hardware*.
+Warning: This step only applies if you are installing to Raspberry Pi
+*hardware*.
 
-Warning: You should skip this step if installing to x86 or amd64 based systems.
+Warning: You should skip this step if installing to x86 or amd64 based
+systems.
 
 - Option for the 32 bit Raspberry Pi OS to be installed to Raspberry Pi hardware
 
@@ -322,7 +329,8 @@ not be applied. Rebooting is strongly recommended.
 
 ### Driver Options ( edit-options.sh )
 
-A file called `8812au.conf` will be installed in `/etc/modprobe.d` by default.
+A file called `8812au.conf` will be installed in `/etc/modprobe.d` by
+default.
 
 Note: The installation script will prompt you to edit the options.
 
