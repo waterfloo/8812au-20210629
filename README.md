@@ -8,17 +8,15 @@
 
 -----
 
-#### Problem reports go in `Issues`.
-
-#### Problem reports should include the information obtained with the following command:
+#### Problem reports go in `Issues`. Include the information obtained with:
 
 ```
-$ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
+sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ```
 
 -----
 
-#### 2021-12-18 Usage report - Clones over the last 2 weeks: 3,122
+#### Usage report - 20211218 - Clones over the last 2 weeks: 3,122
 
 -----
 
@@ -48,8 +46,8 @@ $ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 - Supported interface modes
   * IBSS
   * Managed
-  * Monitor
-  * AP      (see `Bridged_Wireless_Access_Point.md` in the `docs` folder.)
+  * Monitor (see `Monitor_Mode.md` in the `docs` folder.)
+  * AP (see `Bridged_Wireless_Access_Point.md` in the `docs` folder.)
   * P2P-client
   * P2P-GO
   * Concurrent (see `Concurrent_Mode.md` in the `docs` folder.)
@@ -130,7 +128,7 @@ the Installation Steps can be improved.
 * ASUS USB-AC56 Dual-Band AC1200 Adapter (H/W ver. A1)
 * Belkin F9L1109
 * Buffalo - WI-U3-866D
-* Edimax EW-7822UAC
+* [Edimax EW-7822UAC](https://www.amazon.com/Edimax-EW-7822UAC-Dual-Band-Adjustable-Performance/dp/B00BXAXO7C)
 * Linksys WUSB6300 V1
 * Rosewill RNX-AC1200UBE
 * TRENDnet TEW-805UB
