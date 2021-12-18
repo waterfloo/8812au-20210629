@@ -13,9 +13,10 @@
 ```
 sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ```
+
 -----
 
-#### Usage report - 20211218 - Clones over the last 2 weeks: 3,122
+#### Usage report - Clones over the last 2 weeks: 3,122
 
 -----
 
