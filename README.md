@@ -18,6 +18,10 @@ $ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 
 -----
 
+#### 2021-12-18 Usage report - Clones over the last 2 weeks: 3,122
+
+-----
+
 ## 8812au ( 8812au.ko ) :rocket:
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
