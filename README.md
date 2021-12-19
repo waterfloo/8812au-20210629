@@ -20,9 +20,8 @@ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
-- v5.13.6 (Realtek) (20210629)
-- Plus updates from the Linux community
-- Clones over the 2 weeks up to 20211218: 3,122
+- v5.13.6 (Realtek) (20210629) plus updates from the Linux community
+- 3,122 clones over the 2 weeks ending on 20211218
 
 ### Features
 
