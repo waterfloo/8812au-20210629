@@ -140,9 +140,9 @@ you have previously installed another driver for chipsets supported by
 this driver, you MUST remove anything that the previous attempt
 installed BEFORE attempting to install this driver. This driver can be
 removed with the script called `./remove-driver.sh`. Information is
-available below the section called `Removal of the Driver.` You can get
-a  good idea as to whether you need to remove a previously installed
-driver by running the following:
+available in the section called `Removal of the Driver.` You can get a
+good idea as to whether you need to remove a previously installed
+driver by running the following command:
 
 ```
 dkms status
@@ -150,13 +150,13 @@ dkms status
 
 The installation instructions are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
 
-Temporary internet access is required for installation. There are numerous ways to enable temporary internet access depending on your hardware and situation. [One method is to use tethering from a phone.](https://www.makeuseof.com/tag/how-to-tether-your-smartphone-in-linux) Another method to enable temporary internet access is to keep a [WiFi adapter that uses an in-kernel driver](https://github.com/morrownr/USB-WiFi) in your toolkit.
+Temporary internet access is required for installation. There are numerous ways to enable temporary internet access depending on your hardware and situation. [One method is to use tethering from a phone.](https://www.makeuseof.com/tag/how-to-tether-your-smartphone-in-linux) Another method is to keep a [WiFi adapter that uses an in-kernel driver](https://github.com/morrownr/USB-WiFi) in your toolkit.
 
 You will need to use the terminal interface. The quick way to open a terminal: Ctrl+Alt+T (hold down on the Ctrl and Alt keys then press the T key).
 
 An alternative terminal is to use SSH (Secure Shell) from the same or from another computer, in which case you will be in a suitable terminal after logging in, but this step requires that an SSH daemon/server has already been configured. (There are lots of SSH guides available, e.g., for the [Raspberry Pi](https://www.raspberrypi.com/documentation/computers/remote-access.html#setting-up-an-ssh-server) and for [Ubuntu](https://linuxconfig.org/ubuntu-20-04-ssh-server). Do not forget [to secure the SSH server](https://www.howtogeek.com/443156/the-best-ways-to-secure-your-ssh-server/).)
 
-You will need to have sufficient access rights to use `sudo`, so that arbitrary commands can be executed as the `root` user. (If the command `sudo echo Yes` returns "Yes", with or without having to enter your password, you do have sufficient access rights.)
+You will need to have sufficient access rights to use `sudo` so that commands can be executed as the `root` user. (If the command `sudo echo Yes` returns "Yes", with or without having to enter your password, you do have sufficient access rights.)
 
 DKMS is used for the installation. DKMS is a system utility which will automatically recompile and reinstall this driver when a new kernel is installed. DKMS is provided by and maintained by Dell.
 
@@ -233,7 +233,7 @@ sudo zypper install -t pattern devel_kernel dkms
 
 - Options for Arch and Manjaro
 
-if using pacman
+If using pacman
 
 ```
 sudo pacman -S --noconfirm linux-headers dkms git
@@ -272,15 +272,16 @@ git clone https://github.com/morrownr/8812au-20210629.git
 cd ~/src/8812au-20210629
 ```
 
-#### Step 8:  Enable Concurrent Mode ( cmode-on.sh ) (optional)
+#### Step 8: (optional) Enable Concurrent Mode ( cmode-on.sh )
 
-Note: see `Concurrent_Mode.md` in the `docs` folder.
+Note: see `Concurrent_Mode.md` in the `docs` folder to help determine
+whether you want to enable Concurrent Mode.
 
 ```
 ./cmode-on.sh
 ```
 
-#### Step 9:  Run a script to reconfigure for Raspberry Pi hardware
+#### Step 9: Run a script to reconfigure for Raspberry Pi hardware
 
 Warning: This step only applies if you are installing to Raspberry Pi
 *hardware*.
@@ -488,7 +489,7 @@ Answer: You can't without considerable technical skills.  Realtek drivers do not
 
 Question: Why do you recommend Mediatek based adapters when you maintain this repo for a Realtek driver?
 
-Answer: Many new Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards (mac80211) for USB WiFi adapters and the drivers are not maintained in the Linux kernel. These issues make Realtek drivers problematic in many ways. You have been WARNED. For more information about USB WiFi adapters:
+Answer: Many new and existing Linux users already have adapters based on Realtek chipsets. This repo is for Linux users to support their existing adapters but my STRONG recommendation is for Linux users to seek out WiFi solutions based on Mediatek, Intel or Atheros chipsets and in-kernel drivers. If users are looking at a USB solution, Mediatek and Atheros based adapters are the best solution. Realtek based USB adapters are not a good solution because Realtek does not follow Linux Wireless standards (mac80211) for USB WiFi adapters and the drivers are not maintained in the Linux kernel. These issues make Realtek drivers problematic in many ways. You have been WARNED. For more information about USB WiFi adapters:
 
 https://github.com/morrownr/USB-WiFi
 
