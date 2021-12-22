@@ -114,7 +114,7 @@ the Installation Steps can be improved.
 
 ### Tested Hardware
 
-- [Alfa - AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
+- [ALFA - AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
 
 ### Compatible Devices
 
@@ -124,7 +124,7 @@ the Installation Steps can be improved.
 * ASUS USB-AC56 Dual-Band AC1200 Adapter (H/W ver. A1)
 * Belkin F9L1109
 * Buffalo - WI-U3-866D
-* [Edimax EW-7822UAC](https://www.amazon.com/Edimax-EW-7822UAC-Dual-Band-Adjustable-Performance/dp/B00BXAXO7C)
+* [Edimax EW-7822UAC](https://www.amazon.com/Edimax-EW-7822UAC-Dual-Band-Adjustable-Performance/dp/B00BXAXO7C) - Edimax made the source for this driver available.
 * Linksys WUSB6300 V1
 * Rosewill RNX-AC1200UBE
 * TRENDnet TEW-805UB
