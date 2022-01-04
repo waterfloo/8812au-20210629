@@ -98,6 +98,8 @@ the Installation Steps can be improved.
 
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
+- RHEL 8.4 (kernel 4.18.0)
+
 - Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.13)
 
 ### Download Locations for Tested Linux Distributions
@@ -110,6 +112,7 @@ the Installation Steps can be improved.
 - [Manjaro](https://manjaro.org)
 - [openSUSE](https://www.opensuse.org/)
 - [Raspberry Pi OS](https://www.raspberrypi.org)
+- [RHEL](https://www.redhat.com)
 - [Ubuntu](https://www.ubuntu.com)
 
 ### Tested Hardware
