@@ -98,7 +98,7 @@ the Installation Steps can be improved.
 
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
-- RHEL 8.4 (kernel 4.18.0)
+- RHEL 8.4 (kernel 4.18.0) (in progress)
 
 - Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.13)
 
