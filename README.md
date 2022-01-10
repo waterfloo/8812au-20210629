@@ -148,7 +148,7 @@ good idea as to whether you need to remove a previously installed
 driver by running the following command:
 
 ```
-dkms status
+sudo dkms status
 ```
 
 The installation instructions are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
