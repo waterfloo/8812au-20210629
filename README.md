@@ -1,6 +1,6 @@
 -----
 
-#### [Click for USB WiFi Adapter Information for Linux](https://github.com/morrownr/USB-WiFi)
+#### Click [here](https://github.com/morrownr/USB-WiFi) for USB WiFi Adapter Information for Linux
 
 -----
 
@@ -100,6 +100,8 @@ the Installation Steps can be improved.
 
 - RHEL 8.4 (kernel 4.18.0) (in progress)
 
+- Solus
+
 - Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.13)
 
 ### Download Locations for Tested Linux Distributions
@@ -113,6 +115,7 @@ the Installation Steps can be improved.
 - [openSUSE](https://www.opensuse.org/)
 - [Raspberry Pi OS](https://www.raspberrypi.org)
 - [RHEL](https://www.redhat.com)
+- [Solus](https://getsol.us/home/)
 - [Ubuntu](https://www.ubuntu.com)
 
 ### Tested Hardware
@@ -175,6 +178,10 @@ There is no need to disable Secure Mode to install this driver. If Secure Mode i
 
 - Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and Raspberry Pi OS
 
+Note: If your Linux distro does not fall into one of options listed
+below, you will need to research how to update your system package
+information.
+
 ```
 sudo apt update
 ```
@@ -232,6 +239,12 @@ sudo dnf -y install git dkms kernel-devel kernel-debug-devel
 
 ```
 sudo zypper install -t pattern devel_kernel dkms
+```
+
+- Option for Solus
+
+```
+sudo eopkg install gcc linux-current-headers make git
 ```
 
 - Options for Arch and Manjaro
@@ -321,13 +334,32 @@ to be included here.
 
 Note: For automated builds, use _NoPrompt_ as an option.
 
+Note: Solus Linux does not support dkms and will require a manual build.
+See `Manual build instructions` below.
+
 ```
 sudo ./install-driver.sh
 ```
 
+Manual build instructions: The script `install-driver.sh` automates the
+installation process, however, it may be necessary to build and install
+the driver manually with some Linux distros:
+
+```
+make clean
+make
+sudo make install
+sudo reboot
+```
+
+Note: If you use the manual build instructions, you will need to repeat
+the process each time a new kernel is installed in your distro.
+
 Note: If you elect to skip the reboot at the end of the installation
 script, the driver may not load immediately and the driver options will
 not be applied. Rebooting is strongly recommended.
+
+-----
 
 ### Driver Options ( edit-options.sh )
 
@@ -346,7 +378,9 @@ To edit the driver options file, run the `edit-options.sh` script
 sudo ./edit-options.sh
 ```
 
-Note: Documentation for Driver Options is included in the file `8812au.conf`.
+Note: Documentation for Driver Options is included in the file `88x2bu.conf`.
+
+-----
 
 ### Removal of the Driver ( remove-driver.sh )
 
@@ -376,6 +410,8 @@ cd ~/src/8812au-20210629
 sudo ./remove-driver.sh
 ```
 
+-----
+
 ### Recommended WiFi Router/ Access Point Settings
 
 Note: These are general recommendations, some of which may not apply to your specific situation.
@@ -398,6 +434,7 @@ Note: These are general recommendations, some of which may not apply to your spe
 
 After making and saving changes, reboot the router.
 
+-----
 
 ### Check and set regulatory domain
 
@@ -431,6 +468,8 @@ Change the last line to read:
 REGDOMAIN=US
 ```
 
+-----
+
 ### Recommendations regarding USB
 
 - Moving your USB WiFi adapter to a different USB port has been known to fix a variety of problems.
@@ -447,6 +486,7 @@ REGDOMAIN=US
 
 - Some USB WiFi adapters require considerable electrical current and push the capabilities of the power available via USB port. One example is adapters that use the Realtek 8814au chipset. Using a powered multiport USB extension can be a good idea in cases like this.
 
+-----
 
 ### How to disable onboard WiFi on Raspberry Pi 3B, 3B+, 3A+, 4B and Zero W
 
@@ -455,6 +495,8 @@ Add the following line to /boot/config.txt
 ```
 dtoverlay=disable-wifi
 ```
+
+-----
 
 ### How to forget a saved WiFi network on a Raspberry Pi
 
@@ -506,5 +548,10 @@ Answer: Yes. Post a message in `Issues` or `Discussions` if interested.
 Question: I am having problems with my adapter and I use Virtualbox?
 
 Answer: This [article](https://null-byte.wonderhowto.com/forum/wifi-hacking-attach-usb-wireless-adapter-with-virtual-box-0324433/) may help.
+
+-----
+
+Credits:
+
 
 -----
