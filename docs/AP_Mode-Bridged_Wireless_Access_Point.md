@@ -1,4 +1,4 @@
-2022-01-20
+2022-01-25
 
 ## Bridged Wireless Access Point
 
@@ -403,8 +403,10 @@ vht_capab=[SHORT-GI-80]
 #vht_capab=[MAX-MPDU-11454][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][HTC-VHT][MAX-A-MPDU-LEN-EXP7]
 # rtl8814au
 #vht_capab=[MAX-MPDU-11454][RXLDPC][SHORT-GI-80][TX-STBC-2BY1][RX-STBC-1][HTC-VHT][MAX-A-MPDU-LEN-EXP7]
-# rtl8811au - rtl8811cu
+# rtl8811au
 #vht_capab=[MAX-MPDU-11454][SHORT-GI-80][RX-STBC-1][HTC-VHT][MAX-A-MPDU-LEN-EXP7]
+# rtl8811cu
+#vht_capab=[MAX-MPDU-11454][SHORT-GI-80]][HTC-VHT][MAX-A-MPDU-LEN-EXP7]
 #
 # Note: [TX-STBC-2BY1] may cause problems with some Realtek drivers
 
