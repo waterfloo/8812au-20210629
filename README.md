@@ -64,7 +64,7 @@ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ### Compatible Kernels
 
 - Kernels: 4.4  - 5.11 (Realtek)
-- Kernels: 5.12 - 5.16 (community support)
+- Kernels: 5.12 - 5.17 (community support)
 
 ### Tested Linux Distributions
 
