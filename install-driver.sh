@@ -111,12 +111,7 @@ rfkill unblock wlan
 # if NoPrompt is not used, ask user some questions to complete installation
 if [ $NO_PROMPT -ne 1 ]
 then
-	read -p "Do you want to edit the driver options file now? [y/N] " -n 1 -r
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]
-	then
-		nano /etc/modprobe.d/${OPTIONS_FILE}
-	fi
+	nano /etc/modprobe.d/${OPTIONS_FILE}
 
 	read -p "Do you want to reboot now? (recommended) [y/N] " -n 1 -r
 	echo
