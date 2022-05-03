@@ -14,6 +14,8 @@
 sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ```
 
+-----
+
 #### This repo does not support the 8811au chipset - Please Read Issue
 #45 before attempting to install this driver.
 
@@ -24,7 +26,7 @@ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
 - v5.13.6 (Realtek) (20210629) plus updates from the Linux community
-- 3,061 visitors over the 2 weeks ended on 20220206 (Thank you!)
+- 4,027 visitors over the 2 weeks ended on 20220503 (Thank you!)
 
 ### Features
 
@@ -96,7 +98,7 @@ the Installation Steps can be improved.
 
 - openSUSE Tumbleweed (rolling) (kernel 5.15)
 
-- Raspberry Pi OS (2021-10-30) (ARM 32 bit) (kernel 5.10)
+- Raspberry Pi OS (2022-04-04) (ARM 32 bit and 64 bit) (kernel 5.15)
 
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
@@ -105,6 +107,8 @@ the Installation Steps can be improved.
 - Solus
 
 - Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.13)
+
+- Ubuntu 22.04 (kernel 5.15)
 
 ### Download Locations for Tested Linux Distributions
 
@@ -407,7 +411,7 @@ To edit the driver options file, run the `edit-options.sh` script
 sudo ./edit-options.sh
 ```
 
-Note: Documentation for Driver Options is included in the file `88x2bu.conf`.
+Note: Documentation for Driver Options is included in the file `88x2au.conf`.
 
 -----
 
@@ -461,40 +465,6 @@ Note: These are general recommendations, some of which may not apply to your spe
 - Check congestion: There are apps available for smart phones that allow you to check the congestion levels on WiFi channels. The apps generally go by the name of ```WiFi Analyzer``` or something similar.
 
 After making and saving changes, reboot the router.
-
------
-
-### Check and set regulatory domain
-
-Check the current setting
-
-```
-sudo iw reg get
-```
-
-If you get 00, that is the default and may not provide optimal performance.
-
-Find the correct setting here: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-
-Set it temporarily
-
-```
-sudo iw reg set US
-```
-
-Note: Substitute your country code if you are not in the United States.
-
-Set it permanently
-
-```
-sudo nano /etc/default/crda
-```
-
-Change the last line to read:
-
-```
-REGDOMAIN=US
-```
 
 -----
 
@@ -581,7 +551,7 @@ repo for a Realtek driver?
 Answer: Many new and existing Linux users already have adapters based on Realtek
 chipsets. This repo is for Linux users to support their existing adapters but my
 STRONG recommendation is for Linux users to seek out USB WiFi solutions based on
-Mediatek,
+Mediatek chipsets:
 
 https://github.com/morrownr/USB-WiFi
 
