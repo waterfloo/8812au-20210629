@@ -26,7 +26,7 @@ sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
 - v5.13.6 (Realtek) (20210629) plus updates from the Linux community
-- 4,027 visitors over the 2 weeks ended on 20220503 (Thank you!)
+- 4,027 visits over the 2 weeks ended on 20220503 (Thank you!)
 
 ### Features
 
@@ -411,7 +411,7 @@ To edit the driver options file, run the `edit-options.sh` script
 sudo ./edit-options.sh
 ```
 
-Note: Documentation for Driver Options is included in the file `88x2au.conf`.
+Note: Documentation for Driver Options is included in the file `8812au.conf`.
 
 -----
 
