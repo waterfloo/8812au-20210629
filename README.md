@@ -13,11 +13,10 @@
 ```
 sudo uname -a; mokutil --sb-state; lsusb; rfkill list all; dkms status; iw dev
 ```
-
 -----
 
-#### This repo does not support the 8811au chipset - Please Read Issue
-#45 before attempting to install this driver.
+#### Important: This repo does not support the 8811au or 8821au chipsets -
+Please Read Issue #45 before attempting to install this driver.
 
 -----
 
