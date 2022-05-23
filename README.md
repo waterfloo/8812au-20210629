@@ -25,7 +25,7 @@ Please Read Issue #45 before attempting to install this driver.
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
 - v5.13.6 (Realtek) (20210629) plus updates from the Linux community
-- 4,027 visits over the 2 weeks ended on 20220503 (Thank you!)
+- 4,400+ Views over the 2 weeks ended on 20220522 (Thank you!)
 
 ### Features
 
@@ -68,7 +68,7 @@ Please Read Issue #45 before attempting to install this driver.
 ### Compatible Kernels
 
 - Kernels: 4.4  - 5.11 (Realtek)
-- Kernels: 5.12 - 5.17 (community support)
+- Kernels: 5.12 - 5.18 (community support)
 
 ### Tested Linux Distributions
 
@@ -101,11 +101,11 @@ the Installation Steps can be improved.
 
 - Raspberry Pi Desktop (x86 32 bit) (kernel 4.19)
 
-- RHEL 8.4 (kernel 4.18.0) (in progress)
-
 - Solus
 
-- Ubuntu 20.xx (kernels 5.4 and 5.8) and 21.xx (kernels 5.11 and 5.13)
+- Ubuntu 20.xx (kernels 5.4 and 5.8)
+
+- Ubuntu 21.xx (kernels 5.11 and 5.13)
 
 - Ubuntu 22.04 (kernel 5.15)
 
@@ -128,6 +128,8 @@ the Installation Steps can be improved.
 - [ALFA - AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
 
 ### Compatible Devices
+
+Warning: Adapters listed here are not recommended for purchase as I do not recommend Linux users buy Realtek based USB WiFi adapters due to the lack of mac80211 technology drivers that are supported in-kernel as called for by Linux Wireless Standards. This repo is supported for the benefit of Linux users who already have adapters based on the supported chipsets. If you are looking for information about what adapter to buy, click [here](https://github.com/morrownr/USB-WiFi) for information about and links to recommended adapters.
 
 * [ALFA AWUS036AC](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ac-802-11ac-long-range-dual-band-wifi-usb-adapter)
 * [ALFA AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
@@ -362,24 +364,29 @@ discover the settings and make a new script that works with your ARM or
 ARM64 based system, you are welcome to submit the script and information
 to be included here.
 
-#### Step 10: Run the installation script ( install-driver.sh )
+#### Step 10: Run the installation script ( install-driver.sh or install-driver-no-dkms.sh )
 
-Note: Solus Linux does not support dkms and will require a manual build.
-See `Manual build instructions` below.
+Note: For automated builds (non-interactive), use _NoPrompt_ as an option.
 
-Note: For automated builds, use _NoPrompt_ as an option.
+Option for distros that support `dkms` (almost all)
 
 ```
 sudo ./install-driver.sh
+```
+
+Option for distros that do not support `dkms`
+
+```
+sudo ./install-driver-no-dkms.sh
 ```
 
 Note: If you elect to skip the reboot at the end of the installation
 script, the driver may not load immediately and the driver options will
 not be applied. Rebooting is strongly recommended.
 
-Manual build instructions: The script `install-driver.sh` automates the
-installation process, however, it may be necessary to build and install
-the driver manually with some Linux distros:
+Manual build instructions: The scripts automate the installation process,
+however, if you want to or need to do a command line installation, use
+the following:
 
 ```
 make clean
@@ -388,8 +395,9 @@ sudo make install
 sudo reboot
 ```
 
-Note: If you use the manual build instructions, you will need to repeat
-the process each time a new kernel is installed in your distro.
+Note: If you use the manual build instructions or the `install-driver-no-dkms.sh`
+script, you will need to repeat the process each time a new kernel is
+installed in your distro.
 
 -----
 
@@ -414,16 +422,16 @@ Note: Documentation for Driver Options is included in the file `8812au.conf`.
 
 -----
 
-### Removal of the Driver ( remove-driver.sh )
+### Removal of the Driver ( remove-driver.sh or remove-driver-no-dkms.sh )
 
-Note: This script should be used in the following situations:
+Note: Removing the driver is advised in the following situations:
 
 - if driver installation fails
 - if the driver is no longer needed
 - if a new or updated version of the driver needs to be installed
-- if a distro version upgrade is going to be installed
+- if a distro version upgrade is going to be installed (going from kernel 5.10 to kernel 5.15)
 
-Note: This script removes everything that has been installed, with the
+Note: The following removes everything that has been installed, with the
 exception of the packages installed in Step 3 and the driver directory.
 The driver directory can be deleted after running this script.
 
@@ -437,8 +445,18 @@ cd ~/src/8812au-20210629
 
 #### Step 3: Run the removal script
 
+Note: For automated builds (non-interactive), use _NoPrompt_ as an option.
+
+Option for distros that support `dkms` (almost all)
+
 ```
 sudo ./remove-driver.sh
+```
+
+Option for distros that do not support `dkms`
+
+```
+sudo ./remove-driver-no-dkms.sh
 ```
 
 -----
@@ -530,7 +548,7 @@ compatible with this driver. If that is the case, you may need to STOP or KILL
 Network Manager and connect using wpa_supplicant.
 
 WPA3-SAE is working well in AP mode using hostapd with current versions of the
-Raspberry Pi OS. 
+Raspberry Pi OS.
 
 -----
 
