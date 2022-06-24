@@ -55,8 +55,6 @@ Please Read Issue #45 before attempting to install this driver.
 - LED control
 - Power saving control
 - VHT control (allows 80 MHz channel width in AP mode)
-- SU Beamformee and MU Beamformee control
-- SU Beamformer control
 - AP mode DFS channel control
 - USB mode control
 
@@ -67,7 +65,7 @@ Please Read Issue #45 before attempting to install this driver.
 
 ### Compatible Kernels
 
-- Kernels: 4.4  - 5.11 (Realtek)
+- Kernels: 4.19 - 5.11 (Realtek)
 - Kernels: 5.12 - 5.18 (community support)
 
 ### Tested Linux Distributions
