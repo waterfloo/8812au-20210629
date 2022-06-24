@@ -6,7 +6,7 @@
 
 SCRIPT_NAME="install-driver-no-dkms.sh"
 SCRIPT_VERSION="20220419"
-OPTIONS_FILE="88x2bu.conf"
+OPTIONS_FILE="8812au.conf"
 
 # support for NoPrompt allows non-interactive use of this script
 NO_PROMPT=0

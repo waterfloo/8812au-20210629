@@ -6,7 +6,7 @@
 
 SCRIPT_NAME="remove-driver-no-dkms.sh"
 SCRIPT_VERSION="20220419"
-OPTIONS_FILE="88x2bu.conf"
+OPTIONS_FILE="8812au.conf"
 
 echo "Running ${SCRIPT_NAME} version ${SCRIPT_VERSION}"
 
