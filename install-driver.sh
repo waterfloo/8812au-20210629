@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20220108"
+SCRIPT_VERSION="20220705"
 
 DRV_NAME="rtl8812au"
 DRV_VERSION="5.13.6"
@@ -51,13 +51,13 @@ fi
 # information that helps with bug reports
 # displays script name and version
 echo "Running ${SCRIPT_NAME} version ${SCRIPT_VERSION}"
-# distro
-hostnamectl | grep 'Operating System' | sed 's/  Operating System: //'
+# distro (need to work on this)
+#hostnamectl | grep 'Operating System' | sed 's/  Operating System: //'
 # kernel
 uname -r
 # architecture - for ARM: aarch64 = 64 bit, armv7l = 32 bit
 uname -m
-# getconf LONG_BIT (need to work on this)
+#getconf LONG_BIT (need to work on this)
 
 echo "Starting installation..."
 # the add command requires source in /usr/src/${DRV_NAME}-${DRV_VERSION}
@@ -111,7 +111,12 @@ rfkill unblock wlan
 # if NoPrompt is not used, ask user some questions to complete installation
 if [ $NO_PROMPT -ne 1 ]
 then
-	nano /etc/modprobe.d/${OPTIONS_FILE}
+	read -p "Do you want to edit the driver options file now? [y/N] " -n 1 -r
+	echo
+	if [[ $REPLY =~ ^[Yy]$ ]]
+	then
+		nano /etc/modprobe.d/${OPTIONS_FILE}
+	fi
 
 	read -p "Do you want to reboot now? (recommended) [y/N] " -n 1 -r
 	echo
