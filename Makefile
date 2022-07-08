@@ -17,6 +17,7 @@ EXTRA_CFLAGS += -Wno-unused
 EXTRA_CFLAGS += -Wno-vla
 EXTRA_CFLAGS += -Wno-misleading-indentation
 EXTRA_CFLAGS += -Wno-implicit-fallthrough
+#EXTRA_CFLAGS += -Wno-return-type
 
 GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
 ifeq ($(GCC_VER_49),1)
@@ -28,11 +29,6 @@ EXTRA_CFLAGS += -I$(src)/include
 EXTRA_LDFLAGS += --strip-debug
 
 CONFIG_AUTOCFG_CP = n
-
-#RHEL_VER := $(shell echo `grep '^ID_LIKE'  /etc/os-release |grep -qi 'fedora' && grep '^VERSION_ID' /etc/os-release | cut -f2 -d= | cut -c2`)
-#ifeq (${RHEL_VER},8)
-#EXTRA_CFLAGS += -DRHEL8
-#endif
 
 ########################## WIFI IC ############################
 CONFIG_MULTIDRV = n
