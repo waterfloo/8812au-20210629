@@ -26,7 +26,6 @@ Please Read Issue #45 before attempting to install this driver.
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
 - v5.13.6 (Realtek) (20210629) plus updates from the Linux community
-- 4,400+ Views over the 2 weeks ended on 20220522 (Thank you!)
 
 ### Features
 
@@ -416,7 +415,7 @@ installed in your distro.
 ### Driver Options ( edit-options.sh )
 
 A file called `8812au.conf` will be installed in `/etc/modprobe.d` by
-default.
+default if you use one of the scripts for installation.
 
 Note: The installation script will prompt you to edit the options.
 
@@ -507,7 +506,7 @@ After making and saving changes, reboot the router.
 
 - Avoid USB 3.1 Gen 2 ports if possible as almost all currently available adapters have been tested with USB 3.1 Gen 1 (aka USB 3) and not with USB 3.1 Gen 2.
 
-- If you use an extension cable and your adapter is USB 3 capable, the cable needs to be USB 3 capable (if not, you will at best be limited to USB 2 speeds).
+- If you use an extension cable and your adapter is USB 3 capable, the cable needs to be USB 3 capable (if not, you will be limited to USB 2 speeds).
 
 - Extention cables can be problematic. A way to check if the extension cable is the problem is to plug the adapter temporarily into a USB port on the computer.
 
