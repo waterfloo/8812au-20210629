@@ -29,10 +29,10 @@
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 0, 0))
 #define STATION_INFO_INACTIVE_TIME	BIT(NL80211_STA_INFO_INACTIVE_TIME)
-#define STATION_INFO_LLID			BIT(NL80211_STA_INFO_LLID)
-#define STATION_INFO_PLID			BIT(NL80211_STA_INFO_PLID)
+#define STATION_INFO_LLID		BIT(NL80211_STA_INFO_LLID)
+#define STATION_INFO_PLID		BIT(NL80211_STA_INFO_PLID)
 #define STATION_INFO_PLINK_STATE	BIT(NL80211_STA_INFO_PLINK_STATE)
-#define STATION_INFO_SIGNAL			BIT(NL80211_STA_INFO_SIGNAL)
+#define STATION_INFO_SIGNAL		BIT(NL80211_STA_INFO_SIGNAL)
 #define STATION_INFO_TX_BITRATE		BIT(NL80211_STA_INFO_TX_BITRATE)
 #define STATION_INFO_RX_PACKETS		BIT(NL80211_STA_INFO_RX_PACKETS)
 #define STATION_INFO_TX_PACKETS		BIT(NL80211_STA_INFO_TX_PACKETS)
@@ -5390,8 +5390,7 @@ static int cfg80211_rtw_change_beacon(struct wiphy *wiphy, struct net_device *nd
 }
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 19, 2))
-static int cfg80211_rtw_stop_ap(struct wiphy *wiphy, struct net_device *ndev,
-		unsigned int link_id)
+static int cfg80211_rtw_stop_ap(struct wiphy *wiphy, struct net_device *ndev, unsigned int link_id)
 #else
 static int cfg80211_rtw_stop_ap(struct wiphy *wiphy, struct net_device *ndev)
 #endif
@@ -6770,10 +6769,9 @@ exit:
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 8, 0))
 static int cfg80211_rtw_get_channel(struct wiphy *wiphy,
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 19, 2))
-	struct wireless_dev *wdev, unsigned int link_id,
-#else
 	struct wireless_dev *wdev,
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 19, 2))
+	unsigned int link_id,
 #endif
 	struct cfg80211_chan_def *chandef)
 {
