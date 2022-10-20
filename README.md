@@ -66,7 +66,7 @@ Please Read Issue #45 before attempting to install this driver.
 ### Compatible Kernels
 
 - Kernels: 4.19 - 5.11 (Realtek)
-- Kernels: 5.12 - 6.0  (community support)
+- Kernels: 5.12 - 6.1  (community support)
 
 ### Tested Linux Distributions
 
