@@ -2,6 +2,9 @@
 
 ## Linux Driver for USB WiFi Adapters that are based on the RTL8812AU Chipset
 
+Note: Please read "supported-device-IDs" for information about how to
+confirm that this is the correct driver for your adapter.
+
 - v5.13.6 (Realtek) (20210629) plus updates from the Linux community
 
 ### Features
@@ -27,7 +30,6 @@
   * AP (see FAQ)
   * P2P-client
   * P2P-GO
-  * Concurrent (see `Concurrent_Mode.md` in the `docs` folder.)
 - Log level control
 - LED control
 - Power saving control
@@ -54,7 +56,7 @@ is easy to install and works reliably on many distros. Meeting this goal
 depends on you to report your recommendations and updated information. 
 If you see information that needs to be updated, please report the
 updated information and if you do not see adequate support for
-items such as Installation Steps 2, 3 and 9, and you know what updates 
+items such as Installation Steps 2, 3 and 8, and you know what updates 
 need to added or you can get that information, please provide it so that
 the Installation Steps can be improved.
 
@@ -102,8 +104,8 @@ lack of mac80211 technology drivers that are supported in-kernel as
 called for by Linux Wireless Standards. This repo is supported for the
 benefit of Linux users who already have adapters based on the supported
 chipsets. If you are looking for information about what adapter to buy,
-click [here](https://github.com/morrownr/USB-WiFi) for information about
-and links to recommended adapters.
+click [here](https://github.com/morrownr/USB-WiFi) and look for Main Menu
+item 2 which will show information about and links to recommended adapters.
 
 * [ALFA AWUS036AC](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ac-802-11ac-long-range-dual-band-wifi-usb-adapter)
 * [ALFA AWUS036ACH](https://store.rokland.com/collections/wi-fi-usb-adapters/products/alfa-awus036ach-802-11ac-high-power-ac1200-dual-band-wifi-usb-adapter)
@@ -116,8 +118,6 @@ and links to recommended adapters.
 * Rosewill RNX-AC1200UBE
 * TRENDnet TEW-805UB
 * Numerous adapters that are based on the supported chipset.
-
-Note: Please read "supported-device-IDs" for information about how to confirm the correct driver for your adapter.
 
 ### Installation Information
 
@@ -311,16 +311,7 @@ git clone https://github.com/morrownr/8812au-20210629.git
 cd ~/src/8812au-20210629
 ```
 
-#### Step 8: (optional) Enable Concurrent Mode ( cmode-on.sh )
-
-Note: see `Concurrent_Mode.md` in the `docs` folder to help determine
-whether you want to enable Concurrent Mode.
-
-```
-./cmode-on.sh
-```
-
-#### Step 9: Run a script to reconfigure for ARM or ARM64 based systems
+#### Step 8: Run a script to reconfigure for ARM or ARM64 based systems
 
 Warning: This driver defaults to supporting x86 and amd64 based systems
 and this step should be `skipped` if your system is powered by an x86, 
@@ -362,7 +353,7 @@ discover the settings and make a new script that works with your ARM or
 ARM64 based system, you are welcome to submit the script and information
 to be included here.
 
-#### Step 10: Run the installation script ( install-driver.sh )
+#### Step 9: Run the installation script ( install-driver.sh )
 
 Note: For automated builds (non-interactive), use _NoPrompt_ as an option.
 
