@@ -5,9 +5,11 @@
 # Supports dkms and non-dkms installations.
 
 SCRIPT_NAME="install-driver.sh"
-SCRIPT_VERSION="20221101"
+
+SCRIPT_VERSION="20221126"
 MODULE_NAME="8812au"
 DRV_VERSION="5.13.6"
+
 OPTIONS_FILE="${MODULE_NAME}.conf"
 
 KVER="$(uname -r)"
@@ -48,7 +50,7 @@ done
 # displays script name and version
 echo "Running ${SCRIPT_NAME} version ${SCRIPT_VERSION}"
 
-# check for and remove non-dkms installation
+# check for and remove previously installed non-dkms installation
 if [[ -f "${MODDESTDIR}${MODULE_NAME}.ko" ]]
 then
 	echo "Removing a non-dkms installation."
