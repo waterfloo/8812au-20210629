@@ -17,6 +17,15 @@ EXTRA_CFLAGS += -Wno-unused
 EXTRA_CFLAGS += -Wno-vla
 EXTRA_CFLAGS += -Wno-misleading-indentation
 EXTRA_CFLAGS += -Wno-implicit-fallthrough
+#EXTRA_CFLAGS += -Wno-return-type
+
+# Activates Concurrent Mode if uncommented
+#EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
+
+# LED Control
+EXTRA_CFLAGS += -DCONFIG_LED_CONTROL
+EXTRA_CFLAGS += -DCONFIG_SW_LED -DCONFIG_RTW_SW_LED
+EXTRA_CFLAGS += -DCONFIG_LED_ENABLE
 
 # gcc-12
 EXTRA_CFLAGS += -Wno-address
@@ -57,14 +66,10 @@ CONFIG_USB_HCI = y
 CONFIG_PCI_HCI = n
 CONFIG_SDIO_HCI = n
 CONFIG_GSPI_HCI = n
-######################### LED #################################
-CONFIG_LED_CONTROL = y
-CONFIG_LED_ENABLE = y
 ######################### Features ############################
 CONFIG_AP_MODE = y
 CONFIG_P2P = y
 CONFIG_MP_INCLUDED = n
-CONFIG_CONCURRENT_MODE = n
 CONFIG_POWER_SAVING = y
 CONFIG_IPS_MODE = default
 CONFIG_LPS_MODE = default
@@ -88,7 +93,7 @@ CONFIG_SIGNAL_SCALE_MAPPING = n
 CONFIG_80211W = y
 CONFIG_REDUCE_TX_CPU_LOADING = n
 CONFIG_BR_EXT = y
-CONFIG_TDLS = n
+CONFIG_TDLS = y
 CONFIG_WIFI_MONITOR = y
 CONFIG_MCC_MODE = n
 CONFIG_APPEND_VENDOR_IE_ENABLE = n
@@ -147,9 +152,8 @@ CONFIG_LAYER2_ROAMING = y
 #bit0: ROAM_ON_EXPIRED, #bit1: ROAM_ON_RESUME, #bit2: ROAM_ACTIVE
 CONFIG_ROAMING_FLAG = 0x3
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
-CONFIG_PLATFORM_ARM_RPI = n
-CONFIG_PLATFORM_ARM64_RPI = n
+CONFIG_PLATFORM_AUTODETECT = y
+CONFIG_PLATFORM_I386_PC = n
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
 CONFIG_PLATFORM_JB_X86 = n
@@ -310,7 +314,7 @@ EXTRA_CFLAGS += -DCONFIG_RTL8188E
 
 _HAL_INTFS_FILES +=	hal/HalPwrSeqCmd.o \
 					hal/$(RTL871X)/Hal8188EPwrSeq.o \
- 					hal/$(RTL871X)/$(RTL871X)_xmit.o \
+					hal/$(RTL871X)/$(RTL871X)_xmit.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -365,8 +369,8 @@ MODULE_NAME = 8192ee
 endif
 EXTRA_CFLAGS += -DCONFIG_RTL8192E
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8192EPwrSeq.o\
-					hal/$(RTL871X)/$(RTL871X)_xmit.o\
+					hal/$(RTL871X)/Hal8192EPwrSeq.o \
+					hal/$(RTL871X)/$(RTL871X)_xmit.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -425,8 +429,8 @@ endif
 
 _HAL_INTFS_FILES +=  hal/HalPwrSeqCmd.o \
 					hal/$(RTL871X)/Hal8812PwrSeq.o \
-					hal/$(RTL871X)/Hal8821APwrSeq.o\
-					hal/$(RTL871X)/$(RTL871X)_xmit.o\
+					hal/$(RTL871X)/Hal8821APwrSeq.o \
+					hal/$(RTL871X)/$(RTL871X)_xmit.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -532,7 +536,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8723B
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8723BPwrSeq.o\
+					hal/$(RTL871X)/Hal8723BPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -594,7 +598,7 @@ EXTRA_CFLAGS += -DCONFIG_RTL8814A
 
 _HAL_INTFS_FILES +=  hal/HalPwrSeqCmd.o \
 					hal/$(RTL871X)/Hal8814PwrSeq.o \
-					hal/$(RTL871X)/$(RTL871X)_xmit.o\
+					hal/$(RTL871X)/$(RTL871X)_xmit.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -654,7 +658,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8703B
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8703BPwrSeq.o\
+					hal/$(RTL871X)/Hal8703BPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -710,7 +714,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8723D
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8723DPwrSeq.o\
+					hal/$(RTL871X)/Hal8723DPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -778,7 +782,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8188F
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8188FPwrSeq.o\
+					hal/$(RTL871X)/Hal8188FPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -825,7 +829,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8188GTV
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8188GTVPwrSeq.o\
+					hal/$(RTL871X)/Hal8188GTVPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -903,7 +907,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8710B
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8710BPwrSeq.o\
+					hal/$(RTL871X)/Hal8710BPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -950,7 +954,7 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8192F
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-					hal/$(RTL871X)/Hal8192FPwrSeq.o\
+					hal/$(RTL871X)/Hal8192FPwrSeq.o \
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -1308,16 +1312,6 @@ ifeq ($(CONFIG_IP_R_MONITOR), y)
 EXTRA_CFLAGS += -DCONFIG_IP_R_MONITOR
 endif
 
-ifeq ($(CONFIG_LED_CONTROL), y)
-EXTRA_CFLAGS += -DCONFIG_LED_CONTROL
-ifeq ($(CONFIG_RTL8812A), y)
-EXTRA_CFLAGS += -DCONFIG_SW_LED -DCONFIG_RTW_SW_LED
-endif
-ifeq ($(CONFIG_LED_ENABLE), y)
-EXTRA_CFLAGS += -DCONFIG_LED_ENABLE
-endif
-endif
-
 ifeq ($(CONFIG_MP_VHT_HW_TX_MODE), y)
 EXTRA_CFLAGS += -DCONFIG_MP_VHT_HW_TX_MODE
 ifeq ($(CONFIG_PLATFORM_I386_PC), y)
@@ -1355,56 +1349,53 @@ EXTRA_CFLAGS += -DCONFIG_RTW_MBO -DCONFIG_RTW_80211K -DCONFIG_RTW_WNM -DCONFIG_R
 EXTRA_CFLAGS += -DCONFIG_RTW_80211R
 endif
 
-ifeq ($(CONFIG_PLATFORM_I386_PC), y)
-ifeq ($(CONFIG_CONCURRENT_MODE), y)
-EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
-endif
+# *** AUTODETECT ***
+ifeq ($(CONFIG_PLATFORM_AUTODETECT), y)
 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
 EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
+
+SUBARCH := $(shell uname -m)
+
+ifeq ($(SUBARCH), aarch64)
+SUBARCH := arm64
+endif
+
+ifeq ($(SUBARCH), armv7l)
+SUBARCH := arm
+endif
+
+ifeq ($(SUBARCH), armv6l)
+SUBARCH := arm
+endif
+
+ARCH ?= $(SUBARCH)
+
+CROSS_COMPILE ?=
+KVER ?= $(shell uname -r)
+KSRC := /lib/modules/$(KVER)/build
+MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
+INSTALL_PREFIX :=
+STAGINGMODDIR := /lib/modules/$(KVER)/kernel/drivers/staging
+
+# Platform Specific Flags may be Needed in some Situations
+#EXTRA_CFLAGS += -DCONFIG_PLATFORM_ANDROID
+# End of Platform Specific Flags
+endif
+# *** End AUTODETECT ***
+
+ifeq ($(CONFIG_PLATFORM_I386_PC), y)
+EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
+
 SUBARCH := $(shell uname -m | sed -e s/i.86/i386/)
 ARCH ?= $(SUBARCH)
 CROSS_COMPILE ?=
-KVER  := $(shell uname -r)
+KVER := $(shell uname -r)
 KSRC := /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
 STAGINGMODDIR := /lib/modules/$(KVER)/kernel/drivers/staging
 endif
-
-### START RASPBERRY PI OS SUPPORT
-
-ifeq ($(CONFIG_PLATFORM_ARM_RPI), y)
-ifeq ($(CONFIG_CONCURRENT_MODE), y)
-EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
-endif
-EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
-EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
-#EXTRA_CFLAGS += -DPLATFORM_LINUX
-ARCH ?= arm
-CROSS_COMPILE ?=
-KVER ?= $(shell uname -r)
-KSRC := /lib/modules/$(KVER)/build
-MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
-INSTALL_PREFIX :=
-endif
-
-ifeq ($(CONFIG_PLATFORM_ARM64_RPI), y)
-ifeq ($(CONFIG_CONCURRENT_MODE), y)
-EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
-endif
-EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
-EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
-#EXTRA_CFLAGS += -DPLATFORM_LINUX
-EXTRA_CFLAGS += -fno-stack-protector
-ARCH ?= arm64
-CROSS_COMPILE ?=
-KVER ?= $(shell uname -r)
-KSRC := /lib/modules/$(KVER)/build
-MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
-INSTALL_PREFIX :=
-endif
-
-### END RASPBERRY PI OS SUPPORT
 
 ifeq ($(CONFIG_PLATFORM_NV_TK1), y)
 EXTRA_CFLAGS += -DCONFIG_PLATFORM_NV_TK1
@@ -2511,11 +2502,6 @@ all: modules
 
 modules:
 	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules
-
-sign:
-	@openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=Custom MOK/"
-	@mokutil --import MOK.der
-	@$(KSRC)/scripts/sign-file sha256 MOK.priv MOK.der $(MODULE_NAME)
 
 strip:
 	$(CROSS_COMPILE)strip $(MODULE_NAME).ko --strip-unneeded
